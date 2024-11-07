@@ -5,7 +5,7 @@ namespace Models;
 class ApiModel
 {
     private $apiKey;
-    private $BaseUrl;
+    private $apiBaseUrl;
 
     public function __construct()
     {

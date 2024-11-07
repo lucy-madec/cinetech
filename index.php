@@ -4,6 +4,9 @@ require_once __DIR__ . '/src/models/ApiModel.php';
 
 use Models\ApiModel;
 
+// Instance creation
+$api = new ApiModel();
+
 // Retrieving popular films for testing
 $popularMovies = $api->getPopularMovies();
 echo '<h1>Films populaires</h1>';
