@@ -1,9 +1,9 @@
 <?php
 
-require_once __DIR__ . '/src/models/ApiModel.php';
-require_once __DIR__ . '/src/controllers/HomeController.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-use Controllers\HomeController;
+use Router\Router;
 
-$controller = new HomeController();
-$controller->index();
+// Router initialization and request launch
+$router = new Router();
+$router->index();
