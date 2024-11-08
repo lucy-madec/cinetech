@@ -6,4 +6,4 @@ use Router\Router;
 
 // Router initialization and request launch
 $router = new Router();
-$router->index();
+$router->routeRequest();

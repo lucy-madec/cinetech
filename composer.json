@@ -4,7 +4,10 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Lucym\\Cinetech\\": "src/"
+            "Lucym\\Cinetech\\": "src/",
+            "Router\\": "src/",
+            "Controllers\\": "src/controllers/",
+            "Models\\": "src/models/"
         }
     },
     "authors": [
