@@ -1,0 +1,17 @@
+{
+    "name": "lucym/cinetech",
+    "description": "Bibliothèque de films et de séries avec API TMDb",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Lucym\\Cinetech\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lucy",
+            "email": "lucy.madec@laplateforme.io"
+        }
+    ],
+    "require": {}
+}
