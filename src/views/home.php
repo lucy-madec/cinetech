@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinetech</title>
     <link rel="stylesheet" href="/cinetech/public/css/style.css">
+    <link rel="icon" href="/cinetech/public/images/favicon.png" type="image/png">
 </head>
 
 <body>
     <header class="site-header">
-        <h1>Cinetech</h1>
+        <h1 class="neon-text">Cinetech</h1>
         <nav class="navbar">
             <a href="?page=home">Accueil</a>
             <a href="?page=movies">Films</a>
@@ -23,7 +24,7 @@
     </header>
 
     <div class="content-section">
-        <h2>Films populaires</h2>
+        <h2 class="neon-text">Films populaires</h2>
         <div class="items-grid">
             <?php if (!empty($popularMovies['results'])): ?>
                 <?php foreach (array_slice($popularMovies['results'], 0, 4) as $movie): ?>
@@ -39,7 +40,7 @@
     </div>
 
     <div class="content-section">
-        <h2>Séries populaires</h2>
+        <h2 class="neon-text">Séries populaires</h2>
         <div class="items-grid">
             <?php if (!empty($popularSeries['results'])): ?>
                 <?php foreach (array_slice($popularSeries['results'], 0, 4) as $series): ?>
