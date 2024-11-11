@@ -48,10 +48,11 @@ h2 {
 .title-container::after {
     content: "";
     flex: 1;
-    height: 3px; /* Increased line thickness */
-    background-color: rgba(255, 255, 255, 0.6); /* White lines semi-transparente */
+    height: 4px; /* Increased line thickness */
+    background-color: rgb(255, 255, 255); /* White lines */
     margin: 0 15px; /* Space between line and word */
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.8); /* Neon effect */
+    border-radius: 5px; /* Round off the ends of the line */
 }
 
 /* Header style */
