@@ -147,6 +147,43 @@ h2 {
     color: #ddd;
 }
 
+/* Footer */
+.site-footer {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-top: 2px solid rgba(255, 0, 0, 0.8); /* Red line to separate the footer */
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000; /* Effet néon rouge */ 
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
 /* Style responsive */
 @media (min-width: 768px) {
     .items-grid {
