@@ -36,6 +36,24 @@ h2 {
     font-size: 1.5em;
 }
 
+/* Container for titles with lines */
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.title-container::before,
+.title-container::after {
+    content: "";
+    flex: 1;
+    height: 3px; /* Increased line thickness */
+    background-color: rgba(255, 255, 255, 0.6); /* White lines semi-transparente */
+    margin: 0 15px; /* Space between line and word */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.8); /* Neon effect */
+}
+
 /* Header style */
 .site-header {
     background-color: rgba(0, 0, 0, 0.8);

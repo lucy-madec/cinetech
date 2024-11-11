@@ -31,7 +31,9 @@
     </header>
 
     <div class="content-section">
-        <h2 class="neon-text">Films populaires</h2>
+        <div class="title-container">
+            <h2 class="neon-text">Films populaires</h2>
+        </div>
         <div class="items-grid">
             <?php if (!empty($popularMovies['results'])): ?>
                 <?php foreach (array_slice($popularMovies['results'], 0, 4) as $movie): ?>
@@ -47,7 +49,9 @@
     </div>
 
     <div class="content-section">
-        <h2 class="neon-text">Séries populaires</h2>
+        <div class="title-container">
+            <h2 class="neon-text">Séries populaires</h2>
+        </div>
         <div class="items-grid">
             <?php if (!empty($popularSeries['results'])): ?>
                 <?php foreach (array_slice($popularSeries['results'], 0, 4) as $series): ?>
