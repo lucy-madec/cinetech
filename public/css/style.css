@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Tilt Neon", sans-serif;
     margin: 0;
     padding: 0;
     background-image: url("/cinetech/public/images/background.png");
@@ -7,6 +7,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;
+    text-transform: uppercase;
 }
 
 h1 {

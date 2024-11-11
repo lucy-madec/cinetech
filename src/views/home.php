@@ -7,6 +7,10 @@
     <title>Cinetech</title>
     <link rel="stylesheet" href="/cinetech/public/css/style.css">
     <link rel="icon" href="/cinetech/public/images/favicon.png" type="image/png">
+    <!-- Google Fonts - Tilt Neon -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
 </head>
 
 <body>
