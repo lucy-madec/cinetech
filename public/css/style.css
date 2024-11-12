@@ -177,7 +177,7 @@ h2 {
     color: #fff;
     text-decoration: none;
     font-size: 1em;
-    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000; /* Effet néon rouge */ 
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000; /* Red neon effect */ 
 }
 
 .footer-nav a:hover {
