@@ -6,23 +6,25 @@ include __DIR__ . '/partials/header.php';
 
 <main class="content-section">
     <div class="detail-container">
-        <h2 class="neon-text"><?php echo htmlspecialchars($details['title'] ?? $details['name'] ?? $details['name'] ?? 'Titre indisponible'); ?></h2>
+        <div class="detail-background">
+            <h2 class="neon-text"><?php echo htmlspecialchars($details['title'] ?? $details['name'] ?? $details['name'] ?? 'Titre indisponible'); ?></h2>
 
-        <!-- Basic information display -->
-        <div class="detail-info">
-            <?php if (!empty($details['poster_path'])): ?>
-                <img src="https://image.tmdb.org/t/p/w300<?php echo htmlspecialchars($details['poster_path']); ?>" alt="<?php echo htmlspecialchars($details['title'] ?? $details['name'] ?? 'Affiche indisponible'); ?>">
-            <?php else: ?>
-                <p>Affiche indisponible</p>
-            <?php endif; ?>
+            <!-- Basic information display -->
+            <div class="detail-info">
+                <?php if (!empty($details['poster_path'])): ?>
+                    <img src="https://image.tmdb.org/t/p/w300<?php echo htmlspecialchars($details['poster_path']); ?>" alt="<?php echo htmlspecialchars($details['title'] ?? $details['name'] ?? 'Affiche indisponible'); ?>">
+                <?php else: ?>
+                    <p>Affiche indisponible</p>
+                <?php endif; ?>
 
 
-            <div class="detail-text">
-                <p><strong>Réalisateur :</strong> <?php echo htmlspecialchars($details['director'] ?? 'N/A'); ?></p>
-                <p><strong>Types :</strong> <?php echo isset($details['genres']) ? implode(', ', array_map(fn($genre) => $genre['name'], $details['genres'])) : 'N/A'; ?></p>
-                <p><strong>Pays d'origine :</strong> <?php echo htmlspecialchars($details['origin_country'][0] ?? 'N/A'); ?></p>
-                <p><strong>Résumé :</strong> <?php echo htmlspecialchars($details['overview'] ?? 'Résumé indisponible'); ?></p>
-                <p><strong>Acteurs :</strong> <?php echo isset($details['credits']['cast']) ? implode(', ', array_column($details['credits']['cast'], 'name')) : 'N/A'; ?></p>
+                <div class="detail-text">
+                    <p><strong>Réalisateur :</strong> <?php echo htmlspecialchars($details['director'] ?? 'N/A'); ?></p>
+                    <p><strong>Types :</strong> <?php echo isset($details['genres']) ? implode(', ', array_map(fn($genre) => $genre['name'], $details['genres'])) : 'N/A'; ?></p>
+                    <p><strong>Pays d'origine :</strong> <?php echo htmlspecialchars($details['origin_country'][0] ?? 'N/A'); ?></p>
+                    <p><strong>Résumé :</strong> <?php echo htmlspecialchars($details['overview'] ?? 'Résumé indisponible'); ?></p>
+                    <p><strong>Acteurs :</strong> <?php echo isset($details['credits']['cast']) ? implode(', ', array_column($details['credits']['cast'], 'name')) : 'N/A'; ?></p>
+                </div>
             </div>
         </div>
 
