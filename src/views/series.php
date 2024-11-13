@@ -12,7 +12,9 @@ include __DIR__ . '/partials/header.php';
         <?php if (!empty($popularSeries['results'])): ?>
             <?php foreach ($popularSeries['results'] as $series): ?>
                 <div class="item">
-                    <img src="https://image.tmdb.org/t/p/w200<?php echo htmlspecialchars($series['poster_path']); ?>" alt="<?php echo htmlspecialchars($series['name']); ?>">
+                    <a href="?page=detail&type=tv&id=<?php echo htmlspecialchars($series['id']); ?>">
+                        <img src="https://image.tmdb.org/t/p/w200<?php echo htmlspecialchars($series['poster_path']); ?>" alt="<?php echo htmlspecialchars($series['name']); ?>">
+                    </a>
                     <p><strong><?php echo htmlspecialchars($series['name']); ?></strong></p>
                 </div>
             <?php endforeach; ?>
