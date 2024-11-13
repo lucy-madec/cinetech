@@ -1,3 +1,4 @@
+/* Global styles */
 body {
     font-family: "Tilt Neon", sans-serif;
     margin: 0;
@@ -7,59 +8,27 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;
+}
+
+/* Title and link styles with uppercase and neon effect */
+h1, h2, .navbar a, .footer-nav {
     text-transform: uppercase;
-}
-
-h1 {
-    color: #fff;
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Style for icon next to text */
-.logo-icon {
-    width: 120px;
-    height: 90px;
-    vertical-align: middle;
-    margin-right: 8px; /* Space between icon and text */
-}
-
-/* Neon style for titles and links */
-.neon-text {
     color: #fff;
     text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
 }
 
-h2 {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 1.5em;
+/* Logo icon next to text */
+.logo-icon {
+    width: 120px;
+    height: 90px;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
-/* Container for titles with lines */
-.title-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 30px 0;
-}
-
-.title-container::before,
-.title-container::after {
-    content: "";
-    flex: 1;
-    height: 4px; /* Increased line thickness */
-    background-color: rgb(255, 255, 255); /* White lines */
-    margin: 0 15px; /* Space between line and word */
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.8); /* Neon effect */
-    border-radius: 5px; /* Round off the ends of the line */
-}
-
-/* Header style */
+/* Header */
 .site-header {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 15px;
-    text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -77,7 +46,6 @@ h2 {
 }
 
 .navbar a {
-    color: #fff;
     text-decoration: none;
     font-size: 1em;
 }
@@ -107,7 +75,26 @@ h2 {
     color: white;
 }
 
-/* Grid and elements */
+/* Section titles with horizontal lines */
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.title-container::before,
+.title-container::after {
+    content: "";
+    flex: 1;
+    height: 4px;
+    background-color: #fff;
+    margin: 0 15px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.8);
+    border-radius: 5px;
+}
+
+/* Main content section */
 .content-section {
     padding: 20px;
     max-width: 1200px;
@@ -147,7 +134,7 @@ h2 {
     color: #ddd;
 }
 
-/* Style for the detail page */
+/* Detail page */
 .detail-background {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
@@ -194,13 +181,12 @@ h2 {
 .site-footer {
     background-color: #000;
     padding: 20px;
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
-    border-top: 2px solid rgba(255, 0, 0, 0.8); /* Red line to separate the footer */
+    border-top: 2px solid rgba(255, 0, 0, 0.8);
     margin-top: 30px;
 }
 
@@ -217,17 +203,15 @@ h2 {
 }
 
 .footer-nav a {
-    color: #fff;
     text-decoration: none;
     font-size: 1em;
-    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000; /* Red neon effect */ 
 }
 
 .footer-nav a:hover {
     text-decoration: underline;
 }
 
-/* Style responsive */
+/* Responsive grid layout */
 @media (min-width: 768px) {
     .items-grid {
         grid-template-columns: repeat(4, 1fr); 
