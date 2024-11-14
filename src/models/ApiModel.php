@@ -50,7 +50,15 @@ class ApiModel
     // Recover details of a film or series
     public function getDetails($type, $id)
     {
-        return $this->fetchData("/{$type}/{$id}");
+        $endpoint = "https://api.themoviedb.org/3/{$type}/{$id}";
+        $query = http_build_query([
+            'api_key' => 'd47a71e6bd7db6070f8a4a2b9b17aaa5',
+            'language' => 'fr-FR',
+            'append_to_response' => 'credits'
+        ]);
+
+        $response = file_get_contents("{$endpoint}?{$query}");
+        return json_decode($response, true);
     }
 
     // Recovery of similar items (films or series)
