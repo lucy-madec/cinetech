@@ -25,10 +25,20 @@ class DetailController
         $mainCast = array_column(array_slice($details['credits']['cast'], 0, 3), 'name'); // Takes the 3 main players
         $title = $details['title'] ?? $details['name'];
 
+        // Title normalization function to simplify comparison
+        function normalizeTitle($title) {
+            // Suppression des numéros de suite ou sous-titres
+            return preg_replace('/[^\w\s]|(\d+)/', '', strtolower($title));
+        }
+
+        $normalizedTitle = normalizeTitle($title);
+
         // Filtering similar items
-        $filteredItems = array_filter($similarItems, function ($item) use ($title, $director, $genres, $mainCast) {
-            // Checking similar title
-            if (stripos($item['title'] ?? $item['name'], $title) !== false) {
+        $filteredItems = array_filter($similarItems, function ($item) use ($normalizedTitle, $director, $genres, $mainCast) {
+            $itemTitle = normalizeTitle($item['title'] ?? $item['name'] ?? '');
+            
+            // Check if the beginning of the title is similar (for franchises)
+            if (strpos($itemTitle, $normalizedTitle) === 0) {
                 return true;
             }
 
