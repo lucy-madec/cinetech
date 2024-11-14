@@ -25,20 +25,24 @@ class DetailController
         $mainCast = array_column(array_slice($details['credits']['cast'], 0, 3), 'name'); // Takes the 3 main players
         $title = $details['title'] ?? $details['name'];
 
-        // Title normalization function to simplify comparison
-        function normalizeTitle($title) {
-            // Suppression des numéros de suite ou sous-titres
-            return preg_replace('/[^\w\s]|(\d+)/', '', strtolower($title));
+        // Extracting the main keyword from the title
+        function getMainKeyword($title) {
+            // Convert title to lower case and remove special characters
+            $normalizedTitle = preg_replace('/[^\w\s]|(\d+)/', '', strtolower($title));
+            // Retrieving the first significant word
+            $words = explode(' ', $normalizedTitle);
+            return $words[0]; // Returning the first significant word
         }
 
-        $normalizedTitle = normalizeTitle($title);
+        $mainKeyword = getMainKeyword($title);
 
         // Filtering similar items
-        $filteredItems = array_filter($similarItems, function ($item) use ($normalizedTitle, $director, $genres, $mainCast) {
-            $itemTitle = normalizeTitle($item['title'] ?? $item['name'] ?? '');
+        $filteredItems = array_filter($similarItems, function ($item) use ($mainKeyword, $director, $genres, $mainCast) {
+            $itemTitle = $item['title'] ?? $item['name'] ?? '';
+            $itemKeyword = getMainKeyword($itemTitle);
             
-            // Check if the beginning of the title is similar (for franchises)
-            if (strpos($itemTitle, $normalizedTitle) === 0) {
+            // Checks if the main keyword matches
+            if ($itemKeyword === $mainKeyword) {
                 return true;
             }
 
