@@ -45,10 +45,12 @@ include __DIR__ . '/partials/header.php';
         <div class="similar-items">
             <h3 class="neon-text">Éléments Similaires</h3>
             <div class="items-grid">
-                <?php if (isset($similarItems['results']) && is_array($similarItems['results'])): ?>
-                    <?php foreach ($similarItems['results'] as $item): ?>
+                <?php if (!empty($filteredItems)): ?>
+                    <?php foreach ($filteredItems as $item): ?>
                         <div class="item">
-                            <img src="https://image.tmdb.org/t/p/w200<?php echo htmlspecialchars($item['poster_path'] ?? ''); ?>" alt="<?php echo htmlspecialchars($item['title'] ?? $item['name'] ?? 'Titre indisponible'); ?>">
+                            <a href="?page=detail&type=<?php echo htmlspecialchars($type); ?>&id=<?php echo htmlspecialchars($item['id']); ?>">
+                                <img src="https://image.tmdb.org/t/p/w200<?php echo htmlspecialchars($item['poster_path'] ?? ''); ?>" alt="<?php echo htmlspecialchars($item['title'] ?? $item['name'] ?? 'Titre indisponible'); ?>">
+                            </a>
                             <p><strong><?php echo htmlspecialchars($item['title'] ?? $item['name'] ?? 'Titre indisponible'); ?></strong></p>
                         </div>
                     <?php endforeach; ?>

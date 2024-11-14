@@ -64,6 +64,15 @@ class ApiModel
     // Recovery of similar items (films or series)
     public function getSimilar($type, $id)
     {
-        return $this->fetchData("/{$type}/{$id}/similar");
+        $endpoint = "https://api.themoviedb.org/3/{$type}/{$id}/similar";
+        $query = http_build_query([
+            'api_key' => 'd47a71e6bd7db6070f8a4a2b9b17aaa5',
+            'language' => 'fr-FR'
+        ]);
+
+        $response = file_get_contents("{$endpoint}?{$query}");
+        $similarItems = json_decode($response, true);
+
+        return $similarItems['results'] ?? [];
     }
 }
