@@ -9,7 +9,7 @@
         <a href="?page=series" class="neon-text">Séries</a>
         <form action="" class="search-bar" method="get" onsubmit="return false;">
             <input type="text" id="search-input" autocomplete="off" placeholder="Rechercher...">
-            <div id="searchresults"></div>
+            <div id="search-results"></div>
         </form>
     </nav>
 </header>
