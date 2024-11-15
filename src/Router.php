@@ -37,6 +37,10 @@ class Router
                 $controller = new \Controllers\SearchController();
                 $controller->search();
                 break;
+            case 'add-favori':
+                $controller = new \Controllers\FavorisController();
+                $controller->add();
+                break;
         }
     }
 }

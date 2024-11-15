@@ -41,6 +41,15 @@ include __DIR__ . '/partials/header.php';
             </div>
         </div>
 
+        <!-- Bookmark form -->
+        <form method="post" action="?page=add-favori">
+            <input type="hidden" name="element_id" value="<?php echo $details['id']; ?>">
+            <input type="hidden" name="element_type" value="<?php echo $type; ?>">
+            <input type="hidden" name="title" value="<?php echo $details['title'] ?? $details['name']; ?>">
+            <input type="hidden" name="poster_path" value="<?php echo $details['poster_path']; ?>">
+            <button type="submit">Ajouter aux favoris</button>
+        </form>
+
         <!-- Suggestions for similar items -->
         <div class="similar-items">
             <h3 class="neon-text">Éléments Similaires</h3>
