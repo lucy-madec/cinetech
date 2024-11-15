@@ -33,6 +33,10 @@ class Router
                 $controller = new \Controllers\HomeController();
                 $controller->index();
                 break;
+            case 'search':
+                $controller = new \Controllers\SearchController();
+                $controller->search();
+                break;
         }
     }
 }

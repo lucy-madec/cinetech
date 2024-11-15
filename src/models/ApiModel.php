@@ -75,4 +75,19 @@ class ApiModel
 
         return $similarItems['results'] ?? [];
     }
+
+    public function search($query)
+    {
+        $endpoint = "https://api.themoviedb.org/3/search/multi";
+        $query = http_build_query([
+            'api_key' => 'd47a71e6bd7db6070f8a4a2b9b17aaa5',
+            'language' => 'fr-FR',
+            'query' => $query
+        ]);
+
+        $response = file_get_contents("{$endpoint}?{$query}");
+        $results = json_decode($response, true);
+
+        return $results['results'] ?? [];
+    }
 }
