@@ -58,7 +58,9 @@ h1, h2, .navbar a, .footer-nav {
 .search-bar {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: 20px;
 }
 
 .search-bar input {
@@ -79,6 +81,7 @@ h1, h2, .navbar a, .footer-nav {
     max-height: 300px;
     overflow-y: auto;
     z-index: 1000;
+    margin-top: 5px;
 }
 
 .search-result {
