@@ -21,6 +21,22 @@ class DetailController
         // Recovery of similar items from TMDb
         $similarItems = $this->apiModel->getSimilar($type, $id);
 
+        // Check whether the user is logged in and whether the item is in Favorites
+        $isFavorited = false;
+        if (isset($_SESSION['user_id'])) {
+            $userId = $_SESSION['user_id'];
+            $favorisModel = new \Models\FavorisModel();
+            $favoris = $favorisModel->getFavoris($userId);
+            foreach ($favoris as $favori) {
+                if ($favori['element_id'] == $id && $favori['element_type'] == $type) {
+                    $isFavorited = true;
+                    break;
+                }
+            }
+        }
+
+        require_once __DIR__ . '/../views/detail.php';
+
         // Extraction of criteria for filtering
         $director = isset($details['credits']['crew'])
             ? array_column(array_filter($details['credits']['crew'], fn($crew) => $crew['job'] === 'Director'), 'name')[0] ?? null : null;
