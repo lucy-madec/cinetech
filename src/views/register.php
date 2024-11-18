@@ -4,16 +4,22 @@
 <main class="content-section">
     <h2>Inscription</h2>
     <form action="?page=register" method="post">
-        <label for="username">Nom d'utilisateur</label>
-        <input type="text" id="username" name="username" required>
+        <div class="input-container">
+            <i class="fa fa-user icon"></i>
+            <input type="text" id="username" name="username" placeholder="Nom d'utilisateur" required>
+        </div>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <div class="input-container">
+            <i class="fa fa-envelope icon"></i>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
 
-        <label for="password">Mot de passe</label>
-        <input type="password" name="password" id="password" required>
+        <div class="input-container">
+            <i class="fa fa-lock icon"></i>
+            <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+        </div>
 
-        <button type="submit">S'inscrire</button>
+        <button type="submit" class="styled-button">S'inscrire</button>
     </form>
 </main>
 

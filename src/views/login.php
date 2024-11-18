@@ -4,17 +4,21 @@
 <main class="content-section">
     <h2>Connexion</h2>
     <form action="?page=login" method="post">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <div class="input-container">
+            <i class="fa fa-envelope icon"></i>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
 
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password" required>
+        <div class="input-container">
+            <i class="fa fa-lock icon"></i>
+            <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+        </div>
 
         <?php if (!empty($error)): ?>
             <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
         <?php endif; ?>
 
-        <button type="submit">Se connecter</button>
+        <button type="submit" class="styled-button">Se connecter</button>
     </form>
 </main>
 
