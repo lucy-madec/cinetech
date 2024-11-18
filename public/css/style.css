@@ -124,6 +124,9 @@ h1, h2, h3, .navbar a, .footer-nav {
 
 /* Main content section */
 .content-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 20px;
     max-width: 1200px;
     margin: auto;
@@ -276,7 +279,8 @@ h1, h2, h3, .navbar a, .footer-nav {
 }
 
 .detail-container {
-    position: relative;
+    flex: 1;
+    margin-right: 20px;
 }
 
 .favorite-button {
@@ -389,4 +393,26 @@ h1, h2, h3, .navbar a, .footer-nav {
 
 .styled-button:hover {
     background-color: rgba(255, 0, 0, 0.1);
+}
+
+.comments-section {
+    flex: 0 0 300px; /* Largeur fixe pour la section des commentaires */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+}
+
+.comments-list .comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.comments-section h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff; /* Effet néon blanc */
 }
