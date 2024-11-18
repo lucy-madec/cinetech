@@ -46,7 +46,7 @@ class FavorisModel
         $stmt = $this->pdo->prepare("DELETE FROM favorites WHERE user_id = :user_id AND element_id = :element_id");
         $stmt->execute([
             ':user_id' => $userId,
-            ':element_id' => $elementId
+            ':element_id' => $elementId,
         ]);
     }
 }

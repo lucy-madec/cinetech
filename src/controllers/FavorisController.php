@@ -57,5 +57,6 @@ class FavorisController
         $this->favorisModel->removeFavori($userId, $elementId);
 
         header('Location: ?page=favoris');
+        exit;
     }
 }

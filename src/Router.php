@@ -45,6 +45,10 @@ class Router
                 $controller = new \Controllers\FavorisController();
                 $controller->list();
                 break;
+            case 'remove-favori':
+                $controller = new \Controllers\FavorisController();
+                $controller->remove();
+                break;
             case 'register':
                 $controller = new \Controllers\AuthController();
                 $controller->register();
