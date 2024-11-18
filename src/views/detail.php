@@ -8,6 +8,9 @@ include __DIR__ . '/partials/header.php';
     <div class="detail-container">
         <div class="detail-background">
             <h2 class="neon-text"><?php echo htmlspecialchars($details['title'] ?? $details['name'] ?? $details['name'] ?? 'Titre indisponible'); ?></h2>
+            <div class="favorite-button" data-favorited="<?php echo $isFavorited ? 'true' : 'false'; ?>" data-element-id="<?php echo $details['id']; ?>" data-element-type="<?php echo $type; ?>">
+                <i class="fa fa-star <?php echo $isFavorited ? 'filled' : 'empty'; ?>" title="<?php echo $isFavorited ? 'Retirer des favoris' : 'Ajouter aux favoris'; ?>"></i>
+            </div>
 
             <!-- Basic information display -->
             <div class="detail-info">
@@ -39,11 +42,6 @@ include __DIR__ . '/partials/header.php';
                     <p><strong>Acteurs :</strong> <?php echo isset($details['credits']['cast']) ? implode(', ', array_column($details['credits']['cast'], 'name')) : 'N/A'; ?></p>
                 </div>
             </div>
-        </div>
-
-        <!-- Favorites -->
-        <div class="favorite-button" data-favorited="<?php echo $isFavorited ? 'true' : 'false'; ?>" data-element-id="<?php echo $details['id']; ?>" data-element-type="<?php echo $type; ?>">
-            <i class="fa fa-star <?php echo $isFavorited ? 'filled' : 'empty'; ?>" title="<?php echo $isFavorited ? 'Retirer des favoris' : 'Ajouter aux favoris'; ?>"></i>
         </div>
 
         <!-- Suggestions for similar items -->
