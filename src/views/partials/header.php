@@ -11,12 +11,17 @@
             <input type="text" id="search-input" autocomplete="off" placeholder="Rechercher...">
             <div id="search-results"></div>
         </form>
-        <?php if (isset($_SESSION['user_id'])): ?>
-            <a href="?page=favoris">Mes favoris</a>
-            <a href="?page=logout">Déconnexion</a>
-        <?php else: ?>
-            <a href="?page=login">Connexion</a>
-            <a href="?page=register">Inscription</a>
-        <?php endif; ?>
+        <div class="profile-menu">
+            <i class="fa fa-user-circle neon-text profile-icon"></i>
+            <div class="dropdown-menu">
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="?page=favoris">Mes favoris</a>
+                    <a href="?page=logout">Déconnexion</a>
+                <?php else: ?>
+                    <a href="?page=login">Connexion</a>
+                    <a href="?page=register">Inscription</a>
+                <?php endif; ?>
+            </div>
+        </div>
     </nav>
 </header>
