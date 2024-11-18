@@ -205,6 +205,56 @@ h1, h2, .navbar a, .footer-nav {
     gap: 20px;
 }
 
+/* Style for favorite button */
+.favorite-button {
+    position: relative;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ff0;
+    text-align: center;
+}
+
+.favorite-button .fa-star {
+    transition: transform 0.3s ease;
+}
+
+.favorite-button:hover .fa-star {
+    transform: scale(1.2);
+}
+
+/* Filled star */
+.favorite-button .filled {
+    color: #ff0;
+    text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 20px #ff0;
+}
+
+/* Empty star */
+.favorite-button .empty {
+    color: #333;
+}
+
+/* Info-bulle */
+.favorite-button:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -40px; /* Positioning the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.favorite-button:hover::after {
+    opacity: 1; /* Render tooltip visible after 1 second */
+    transition-delay: 1s;
+}
+
 /* Footer */
 .site-footer {
     background-color: #000;

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/cinetech/public/css/style.css">
     <!-- JS -->
     <script src="/cinetech/public/js/search.js" defer></script>
+    <script src="/cinetech/public/js/favorites.js" defer></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
