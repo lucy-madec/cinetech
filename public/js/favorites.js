@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", async () => {
       const isFavorited = button.dataset.favorited === "true";
       const elementId = button.dataset.elementType;
+      const elementType = button.dataset.elementType;
 
       const action = isFavorited ? "remove-favori" : "add-favori";
 

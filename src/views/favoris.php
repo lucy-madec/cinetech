@@ -16,7 +16,9 @@ include __DIR__ . '/partials/header.php';
                     <p><strong><?php echo htmlspecialchars($favori['title']); ?></strong></p>
                     <form action="?page=remove-favori" method="post">
                         <input type="hidden" name="element_id" value="<?php echo $favori['element_id']; ?>">
-                        <button type="submit">Retirer</button>
+                        <button type="submit" class="favorite-button" title="Retirer des favoris">
+                            <i class="fa fa-star filled"></i>
+                        </button>
                     </form>
                 </div>
             <?php endforeach; ?>
