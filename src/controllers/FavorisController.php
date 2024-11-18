@@ -23,12 +23,13 @@ class FavorisController
         $userId = $_SESSION['user_id'];
         $elementId = $_POST['element_id'];
         $elementType = $_POST['element_type'];
-        $title = $_POST['title'];
-        $posterPath = $_POST['poster_path'];
+        $title = $_POST['title'] ?? '';
+        $posterPath = $_POST['poster_path'] ?? '';
 
         $this->favorisModel->addFavori($userId, $elementId, $elementType, $title, $posterPath);
 
         header('Location: ?page=favoris');
+        exit;
     }
 
     public function list()

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   favoriteButtons.forEach((button) => {
     button.addEventListener("click", async () => {
       const isFavorited = button.dataset.favorited === "true";
-      const elementId = button.dataset.elementType;
+      const elementId = button.dataset.elementId;
       const elementType = button.dataset.elementType;
 
       const action = isFavorited ? "remove-favori" : "add-favori";
@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
           body: new URLSearchParams({
             element_id: elementId,
             element_type: elementType,
+            title: button.dataset.title,
+            poster_path: button.dataset.posterPath
           }),
         });
 

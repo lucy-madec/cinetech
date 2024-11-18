@@ -286,3 +286,28 @@ h1, h2, .navbar a, .footer-nav {
     cursor: pointer;
     z-index: 10;
 }
+
+.items-grid .item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.items-grid .item p {
+    margin: 10px 0;
+}
+
+.items-grid .favorite-button {
+    position: static;
+    margin-top: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.items-grid .favorite-button i {
+    color: #ffff00;
+    text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 15px #ffff00;
+}
