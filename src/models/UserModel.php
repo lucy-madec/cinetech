@@ -24,7 +24,8 @@ class UserModel
         $stmt = $this->pdo->prepare("INSERT INTO users (username, email, password) VALUE (:username, :email, :password)");
         $stmt->execute([
             ':username' => $username,
-            ':email' => $hashedPassword,
+            ':email' => $email,
+            ':password' => $hashedPassword,
         ]);
     }
 

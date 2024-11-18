@@ -21,7 +21,10 @@ class FavorisModel
 
     public function addFavori($userId, $elementId, $elementType, $title, $posterPath)
     {
-        $stmt = $this->pdo->prepare("INSERT INTO favorites (user_id, element_id, element_type, title, poster_path) VALUES (:user_id, :element_type, :title, :poster_path");
+        $stmt = $this->pdo->prepare("
+            INSERT INTO favorites (user_id, element_id, element_type, title, poster_path)
+            VALUES (:user_id, :element_id, :element_type, :title, :poster_path)
+        ");
         $stmt->execute([
             ':user_id' => $userId,
             ':element_id' => $elementId,
