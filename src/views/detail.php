@@ -67,10 +67,13 @@ $comments = $commentsController->list($details['id']);
 
     <div class="comments-section">
         <h3>Commentaires</h3>
-        <form action="?page=add-comment" method="post">
+        <form action="?page=add-comment" method="post" class="comment-form">
             <input type="hidden" name="element_id" value="<?php echo $details['id']; ?>">
-            <textarea name="content" placeholder="Laissez un commentaire..." required></textarea>
-            <button type="submit">Envoyer</button>
+            <div class="input-container">
+                <i class="fa fa-comment icon"></i>
+                <textarea name="content" placeholder="Laissez un commentaire..." required></textarea>
+            </div>
+            <button type="submit" class="styled-button">Envoyer</button>
         </form>
 
         <div class="comments-list">
@@ -81,7 +84,7 @@ $comments = $commentsController->list($details['id']);
                         <input type="hidden" name="element_id" value="<?php echo $details['id']; ?>">
                         <input type="hidden" name="parent_id" value="<?php echo $comment['id']; ?>">
                         <textarea name="content" placeholder="Répondre..." required></textarea>
-                        <button type="submit">Répondre</button>
+                        <button type="submit" class="styled-button">Répondre</button>
                     </form>
                 </div>
             <?php endforeach; ?>

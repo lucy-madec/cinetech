@@ -362,6 +362,7 @@ h1, h2, h3, .navbar a, .footer-nav {
     box-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
     padding: 15px;
     border-radius: 5px;
+    width: 100%;
 }
 
 .input-container .icon {
@@ -369,12 +370,15 @@ h1, h2, h3, .navbar a, .footer-nav {
     color: #ffffff;
 }
 
-.input-container input {
+.input-container textarea {
     border: none;
     outline: none;
     background: transparent;
     color: #ffffff;
     width: 100%;
+    resize: none; /* Disable manual resizing */
+    overflow: hidden; /* Hide scrollbars */
+    min-height: 50px; /* Initial height */
 }
 
 .styled-button {
@@ -387,7 +391,7 @@ h1, h2, h3, .navbar a, .footer-nav {
     cursor: pointer;
     transition: background-color 0.3s ease;
     display: block;
-    margin: 20px auto;
+    margin-left: auto; /* Align to the right */
     border-radius: 5px;
 }
 
