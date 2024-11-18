@@ -11,7 +11,7 @@ body {
 }
 
 /* Title and link styles with uppercase and neon effect */
-h1, h2, .navbar a, .footer-nav {
+h1, h2, h3, .navbar a, .footer-nav {
     text-transform: uppercase;
     color: #fff;
     text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
