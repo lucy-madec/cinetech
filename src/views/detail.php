@@ -42,15 +42,9 @@ include __DIR__ . '/partials/header.php';
         </div>
 
         <!-- Favorites -->
-        <?php if ($isFavorited): ?>
-            <div class="favorite-button" data-favorited="true" data-element-id="<?php echo $details['id']; ?>" data-element-type="<?php echo $type; ?>">
-                <i class="fa fa-star filled" title="Retirer des favoris"></i>
-            </div>
-        <?php else: ?>
-            <div class="favorite-button" data-favorited="false" data-element-id="<?php echo $details['id']; ?>" data-element-type="<?php echo $type; ?>">
-                <i class="fa fa-star empty" title="Ajouter aux favoris"></i>
-            </div>
-        <?php endif; ?>
+        <div class="favorite-button" data-favorited="<?php echo $isFavorited ? 'true' : 'false'; ?>" data-element-id="<?php echo $details['id']; ?>" data-element-type="<?php echo $type; ?>">
+            <i class="fa fa-star <?php echo $isFavorited ? 'filled' : 'empty'; ?>" title="<?php echo $isFavorited ? 'Retirer des favoris' : 'Ajouter aux favoris'; ?>"></i>
+        </div>
 
         <!-- Suggestions for similar items -->
         <div class="similar-items">
