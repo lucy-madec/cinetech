@@ -363,6 +363,7 @@ h1, h2, h3, .navbar a, .footer-nav {
     padding: 15px;
     border-radius: 5px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .input-container .icon {
@@ -376,9 +377,10 @@ h1, h2, h3, .navbar a, .footer-nav {
     background: transparent;
     color: #ffffff;
     width: 100%;
-    resize: none; /* Disable manual resizing */
-    overflow: hidden; /* Hide scrollbars */
-    min-height: 50px; /* Initial height */
+    resize: none;
+    overflow: hidden;
+    min-height: 50px;
+    box-sizing: border-box;
 }
 
 .styled-button {
@@ -391,8 +393,10 @@ h1, h2, h3, .navbar a, .footer-nav {
     cursor: pointer;
     transition: background-color 0.3s ease;
     display: block;
-    margin-left: auto; /* Align to the right */
+    margin-left: auto;
     border-radius: 5px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .styled-button:hover {
@@ -400,11 +404,57 @@ h1, h2, h3, .navbar a, .footer-nav {
 }
 
 .comments-section {
-    flex: 0 0 300px; /* Largeur fixe pour la section des commentaires */
+    flex: 0 0 400px; /* Augmenter la largeur de la section des commentaires */
     background-color: rgba(0, 0, 0, 0.7);
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.comment-form {
+    display: flex;
+    align-items: flex-start; /* Aligner le textarea et le bouton en haut */
+    gap: 10px; /* Espacement entre le textarea et le bouton */
+}
+
+.input-container {
+    flex: 1; /* Permet au textarea de prendre l'espace restant */
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid transparent;
+    text-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
+    box-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.input-container textarea {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    min-height: 50px;
+    box-sizing: border-box;
+}
+
+.styled-button {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid transparent;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+    box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .comments-list .comment {
