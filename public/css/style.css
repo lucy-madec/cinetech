@@ -456,3 +456,17 @@ h1, h2, h3, .navbar a, .footer-nav {
     margin-top: 15px;
     font-style: italic;
 }
+
+.delete-icon {
+    margin-left: 10px;
+}
+
+.delete-icon i {
+    font-size: 1em;
+    color: #ffffff;
+    transition: transform 0.2s ease;
+}
+
+.delete-icon:hover i {
+    transform: scale(1.2);
+}
