@@ -124,12 +124,12 @@ h1, h2, h3, .navbar a, .footer-nav {
 
 /* Main content section */
 .content-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    padding: 20px;
     max-width: 1200px;
     margin: auto;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .items-grid {
@@ -279,8 +279,7 @@ h1, h2, h3, .navbar a, .footer-nav {
 }
 
 .detail-container {
-    flex: 1;
-    margin-right: 20px;
+    position: relative;
 }
 
 .favorite-button {
@@ -353,15 +352,17 @@ h1, h2, h3, .navbar a, .footer-nav {
 }
 
 .input-container {
+    flex: 1;
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
     background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid transparent;
     text-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
     box-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
     padding: 15px;
     border-radius: 5px;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .input-container .icon {
@@ -378,17 +379,17 @@ h1, h2, h3, .navbar a, .footer-nav {
 }
 
 .styled-button {
+    align-self: center;
     background-color: rgba(0, 0, 0, 0.7);
     border: 2px solid transparent;
     color: #ffffff;
     text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
     box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
-    padding: 15px 30px;
+    padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    display: block;
-    margin: 20px auto;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .styled-button:hover {
@@ -397,7 +398,6 @@ h1, h2, h3, .navbar a, .footer-nav {
 
 /* Comments section */
 .comments-section {
-    flex: 0 0 400px;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 15px;
     border-radius: 5px;
@@ -410,6 +410,19 @@ h1, h2, h3, .navbar a, .footer-nav {
     display: flex;
     align-items: flex-start;
     gap: 10px;
+}
+
+.input-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid transparent;
+    text-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
+    box-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .input-container textarea {
@@ -441,28 +454,4 @@ h1, h2, h3, .navbar a, .footer-nav {
     text-align: center;
     margin-top: 15px;
     font-style: italic;
-}
-
-/* Ajoutez cette règle CSS pour cibler uniquement la page de détail */
-.detail-page {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-.detail-page .detail-container {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.detail-page .comments-section {
-    flex: 0 0 400px;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
-    max-width: 100%;
-    box-sizing: border-box;
 }
