@@ -20,15 +20,17 @@ class CommentsController
             exit;
         }
 
-        $userId = $_SESSION['user_id'];
-        $elementId = $_POST['element_id'];
-        $content = $_POST['content'];
-        $parentId = $_POST['parent_id'] ?? null;
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $userId = $_SESSION['user_id'];
+            $elementId = $_POST['element_id'];
+            $content = $_POST['content'];
+            $parentId = $_POST['parent_id'] ?? null;
 
-        $this->commentsModel->addComment($userId, $elementId, $content, $parentId);
+            $this->commentsModel->addComment($userId, $elementId, $content, $parentId);
 
-        header('Location: ?page=detail&id=' . $elementId);
-        exit;
+            header('Location: ?page=detail&id=' . $elementId);
+            exit;
+        }
     }
 
     public function list($elementId)

@@ -67,25 +67,26 @@ $comments = $commentsController->list($details['id']);
 
     <div class="comments-section">
         <h3>Commentaires</h3>
-        <form action="?page=add-comment" method="post" class="comment-form">
-            <input type="hidden" name="element_id" value="<?php echo $details['id']; ?>">
-            <div class="input-container">
-                <i class="fa fa-comment icon"></i>
-                <textarea name="content" placeholder="Laissez un commentaire..." required></textarea>
-            </div>
-            <button type="submit" class="styled-button">Envoyer</button>
-        </form>
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <form action="?page=add-comment" method="post" class="comment-form">
+                <input type="hidden" name="element_id" value="<?php echo $details['id']; ?>">
+                <div class="input-container">
+                    <i class="fa fa-comment icon"></i>
+                    <textarea name="content" placeholder="Laissez un commentaire..." required></textarea>
+                </div>
+                <button type="submit" class="styled-button">Envoyer</button>
+            </form>
+        <?php else: ?>
+            <p class="login-prompt">Veuillez vous connecter pour laisser un commentaire.</p>
+        <?php endif; ?>
 
         <div class="comments-list">
             <?php foreach ($comments as $comment): ?>
                 <div class="comment">
-                    <p><?php echo htmlspecialchars($comment['content']); ?></p>
-                    <form action="?page=add-comment" method="post">
-                        <input type="hidden" name="element_id" value="<?php echo $details['id']; ?>">
-                        <input type="hidden" name="parent_id" value="<?php echo $comment['id']; ?>">
-                        <textarea name="content" placeholder="Répondre..." required></textarea>
-                        <button type="submit" class="styled-button">Répondre</button>
-                    </form>
+                    <p class="comment-meta">
+                        <?php echo htmlspecialchars($comment['username']); ?> - <?php echo date('d/m/Y H:i', strtotime($comment['created_at'])); ?>
+                    </p>
+                    <p class="comment-content"><?php echo htmlspecialchars($comment['content']); ?></p>
                 </div>
             <?php endforeach; ?>
         </div>

@@ -127,9 +127,9 @@ h1, h2, h3, .navbar a, .footer-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
     max-width: 1200px;
     margin: auto;
+    padding: 20px;
 }
 
 .items-grid {
@@ -324,28 +324,28 @@ h1, h2, h3, .navbar a, .footer-nav {
 .profile-icon {
     font-size: 24px;
     cursor: pointer;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff; /* Effet néon blanc */
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
 }
 
 .dropdown-menu {
     display: none;
     position: absolute;
     right: 0;
-    background-color: #333; /* Couleur sombre */
+    background-color: #333;
     min-width: 160px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
 .dropdown-menu a {
-    color: #ffffff; /* Liens en blanc */
+    color: #ffffff;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
 .dropdown-menu a:hover {
-    background-color: #575757; /* Couleur de survol */
+    background-color: #575757;
 }
 
 .profile-menu:hover .dropdown-menu {
@@ -362,8 +362,6 @@ h1, h2, h3, .navbar a, .footer-nav {
     box-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
     padding: 15px;
     border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .input-container .icon {
@@ -371,16 +369,12 @@ h1, h2, h3, .navbar a, .footer-nav {
     color: #ffffff;
 }
 
-.input-container textarea {
+.input-container input {
     border: none;
     outline: none;
     background: transparent;
     color: #ffffff;
     width: 100%;
-    resize: none;
-    overflow: hidden;
-    min-height: 50px;
-    box-sizing: border-box;
 }
 
 .styled-button {
@@ -393,18 +387,17 @@ h1, h2, h3, .navbar a, .footer-nav {
     cursor: pointer;
     transition: background-color 0.3s ease;
     display: block;
-    margin-left: auto;
+    margin: 20px auto;
     border-radius: 5px;
-    max-width: 100%;
-    box-sizing: border-box;
 }
 
 .styled-button:hover {
     background-color: rgba(255, 0, 0, 0.1);
 }
 
+/* Comments section */
 .comments-section {
-    flex: 0 0 400px; /* Augmenter la largeur de la section des commentaires */
+    flex: 0 0 400px;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 15px;
     border-radius: 5px;
@@ -415,21 +408,8 @@ h1, h2, h3, .navbar a, .footer-nav {
 
 .comment-form {
     display: flex;
-    align-items: flex-start; /* Aligner le textarea et le bouton en haut */
-    gap: 10px; /* Espacement entre le textarea et le bouton */
-}
-
-.input-container {
-    flex: 1; /* Permet au textarea de prendre l'espace restant */
-    display: flex;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 1px solid transparent;
-    text-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
-    box-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
-    padding: 15px;
-    border-radius: 5px;
-    box-sizing: border-box;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .input-container textarea {
@@ -444,29 +424,21 @@ h1, h2, h3, .navbar a, .footer-nav {
     box-sizing: border-box;
 }
 
-.styled-button {
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 2px solid transparent;
+.comment-meta {
     color: #ffffff;
     text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
-    box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
-    padding: 15px 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-    box-sizing: border-box;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.comments-list .comment {
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-}
-
-.comments-section h3 {
-    text-align: center;
-    margin-bottom: 15px;
+.comment-content {
     color: #ffffff;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff; /* Effet néon blanc */
+    margin-bottom: 15px;
+}
+
+.login-prompt {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
 }
