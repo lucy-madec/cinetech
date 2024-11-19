@@ -19,30 +19,31 @@ class CommentsModel
         ]);
     }
 
-    public function addComment($userId, $elementId, $content, $parentId = null)
+    public function addComment($userId, $elementId, $elementType, $content, $parentId = null)
     {
         $stmt = $this->pdo->prepare("
-            INSERT INTO comments (user_id, element_id, content, parent_id)
-            VALUES (:user_id, :element_id, :content, :parent_id)
+            INSERT INTO comments (user_id, element_id, element_type, content, parent_id)
+            VALUES (:user_id, :element_id, :element_type, :content, :parent_id)
         ");
         $stmt->execute([
             ':user_id' => $userId,
             ':element_id' => $elementId,
+            ':element_type' => $elementType,
             ':content' => $content,
             ':parent_id' => $parentId
         ]);
     }
 
-    public function getCommentsByElement($elementId)
+    public function getCommentsByElement($elementId, $elementType)
     {
         $stmt = $this->pdo->prepare("
             SELECT comments.content, comments.created_at, users.username 
             FROM comments 
             JOIN users ON comments.user_id = users.id 
-            WHERE comments.element_id = :element_id 
+            WHERE comments.element_id = :element_id AND comments.element_type = :element_type
             ORDER BY comments.created_at DESC
         ");
-        $stmt->execute([':element_id' => $elementId]);
+        $stmt->execute([':element_id' => $elementId, ':element_type' => $elementType]);
         return $stmt->fetchAll();
     }
 }

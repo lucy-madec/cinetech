@@ -23,18 +23,19 @@ class CommentsController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $userId = $_SESSION['user_id'];
             $elementId = $_POST['element_id'];
+            $elementType = $_POST['element_type'];
             $content = $_POST['content'];
             $parentId = $_POST['parent_id'] ?? null;
 
-            $this->commentsModel->addComment($userId, $elementId, $content, $parentId);
+            $this->commentsModel->addComment($userId, $elementId, $elementType, $content, $parentId);
 
-            header('Location: ?page=detail&id=' . $elementId);
+            header('Location: ?page=detail&type=' . $elementType . '&id=' . $elementId);
             exit;
         }
     }
 
-    public function list($elementId)
+    public function list($elementId, $elementType)
     {
-        return $this->commentsModel->getCommentsByElement($elementId);
+        return $this->commentsModel->getCommentsByElement($elementId, $elementType);
     }
 }

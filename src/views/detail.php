@@ -4,7 +4,7 @@ include __DIR__ . '/partials/head.php';
 include __DIR__ . '/partials/header.php';
 
 $commentsController = new \Controllers\CommentsController();
-$comments = $commentsController->list($details['id']);
+$comments = $commentsController->list($details['id'], $type);
 ?>
 
 <main class="content-section detail-page">
@@ -70,6 +70,7 @@ $comments = $commentsController->list($details['id']);
         <?php if (isset($_SESSION['user_id'])): ?>
             <form action="?page=add-comment" method="post" class="comment-form">
                 <input type="hidden" name="element_id" value="<?php echo $details['id']; ?>">
+                <input type="hidden" name="element_type" value="<?php echo $type; ?>">
                 <div class="input-container">
                     <i class="fa fa-comment icon"></i>
                     <textarea name="content" placeholder="Laissez un commentaire..." required></textarea>
