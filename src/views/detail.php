@@ -84,7 +84,7 @@ $comments = $commentsController->list($details['id']);
             <?php foreach ($comments as $comment): ?>
                 <div class="comment">
                     <p class="comment-meta">
-                        <?php echo htmlspecialchars($comment['username']); ?> - <?php echo date('d/m/Y H:i', strtotime($comment['created_at'])); ?>
+                        <?php echo htmlspecialchars($comment['username'] ?? 'Utilisateur inconnu'); ?> - <?php echo date('d/m/Y H:i', strtotime($comment['created_at'])); ?>
                     </p>
                     <p class="comment-content"><?php echo htmlspecialchars($comment['content']); ?></p>
                 </div>

@@ -36,7 +36,11 @@ class CommentsModel
     public function getCommentsByElement($elementId)
     {
         $stmt = $this->pdo->prepare("
-            SELECT * FROM comments WHERE element_id = :element_id ORDER BY created_at DESC
+            SELECT comments.content, comments.created_at, users.username 
+            FROM comments 
+            JOIN users ON comments.user_id = users.id 
+            WHERE comments.element_id = :element_id 
+            ORDER BY comments.created_at DESC
         ");
         $stmt->execute([':element_id' => $elementId]);
         return $stmt->fetchAll();
