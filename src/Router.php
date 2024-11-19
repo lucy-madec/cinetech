@@ -65,6 +65,10 @@ class Router
                 $controller = new \Controllers\AuthController();
                 $controller->logout();
                 break;
+            case 'delete-comment':
+                $controller = new \Controllers\CommentsController();
+                $controller->delete();
+                break;
         }
     }
 }

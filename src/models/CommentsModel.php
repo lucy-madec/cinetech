@@ -37,7 +37,7 @@ class CommentsModel
     public function getCommentsByElement($elementId, $elementType)
     {
         $stmt = $this->pdo->prepare("
-            SELECT comments.content, comments.created_at, users.username 
+            SELECT comments.content, comments.created_at, comments.user_id, users.username 
             FROM comments 
             JOIN users ON comments.user_id = users.id 
             WHERE comments.element_id = :element_id AND comments.element_type = :element_type
@@ -45,5 +45,14 @@ class CommentsModel
         ");
         $stmt->execute([':element_id' => $elementId, ':element_type' => $elementType]);
         return $stmt->fetchAll();
+    }
+
+    public function deleteComment($commentId, $userId)
+    {
+        $stmt = $this->pdo->prepare("
+            DELETE FROM comments 
+            WHERE id = :comment_id AND user_id = :user_id
+        ");
+        $stmt->execute([':comment_id' => $commentId, ':user_id' => $userId]);
     }
 }

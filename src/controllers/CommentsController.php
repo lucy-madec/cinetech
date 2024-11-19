@@ -38,4 +38,25 @@ class CommentsController
     {
         return $this->commentsModel->getCommentsByElement($elementId, $elementType);
     }
+
+    public function delete()
+    {
+        if (!isset($_SESSION['user_id'])) {
+            header('Location: ?page=login');
+            exit;
+        }
+
+        if (isset($_GET['comment_id'])) {
+            $commentId = $_GET['comment_id'];
+            $userId = $_SESSION['user_id'];
+
+            $this->commentsModel->deleteComment($commentId, $userId);
+
+            // Redirigez vers la page de détail après la suppression
+            $elementId = $_GET['element_id'];
+            $elementType = $_GET['element_type'];
+            header('Location: ?page=detail&type=' . $elementType . '&id=' . $elementId);
+            exit;
+        }
+    }
 }

@@ -86,8 +86,13 @@ $comments = $commentsController->list($details['id'], $type);
                 <div class="comment">
                     <p class="comment-meta">
                         <?php echo htmlspecialchars($comment['username'] ?? 'Utilisateur inconnu'); ?> - <?php echo date('d/m/Y H:i', strtotime($comment['created_at'])); ?>
+                        <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] === $comment['user_id']): ?>
+                            <a href="?page=delete-comment&comment_id=<?php echo htmlspecialchars($comment['id'] ?? ''); ?>&element_id=<?php echo htmlspecialchars($details['id'] ?? ''); ?>&element_type=<?php echo htmlspecialchars($type ?? ''); ?>" class="delete-icon" title="Supprimer le commentaire">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        <?php endif; ?>
                     </p>
-                    <p class="comment-content"><?php echo htmlspecialchars($comment['content']); ?></p>
+                    <p class="comment-content"><?php echo htmlspecialchars($comment['content'] ?? ''); ?></p>
                 </div>
             <?php endforeach; ?>
         </div>
