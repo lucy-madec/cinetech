@@ -444,9 +444,8 @@ h1, h2, h3, .navbar a, .footer-nav {
 }
 
 /* Ajoutez cette règle CSS pour cibler uniquement la page de détail */
-.detail-page .content-section {
+.detail-page {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     max-width: 1200px;
     margin: auto;
