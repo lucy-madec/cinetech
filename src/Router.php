@@ -28,6 +28,10 @@ class Router
                     echo "ID non spécifié pour la page de détail.";
                 }
                 break;
+            case 'add-comment':
+                $controller = new \Controllers\CommentsController();
+                $controller->add();
+                break;
             case 'home':
             default:
                 $controller = new \Controllers\HomeController();
