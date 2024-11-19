@@ -442,3 +442,28 @@ h1, h2, h3, .navbar a, .footer-nav {
     margin-top: 15px;
     font-style: italic;
 }
+
+/* Ajoutez cette règle CSS pour cibler uniquement la page de détail */
+.detail-page .content-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.detail-page .detail-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.detail-page .comments-section {
+    flex: 0 0 400px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+    max-width: 100%;
+    box-sizing: border-box;
+}

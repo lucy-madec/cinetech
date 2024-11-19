@@ -7,7 +7,7 @@ $commentsController = new \Controllers\CommentsController();
 $comments = $commentsController->list($details['id']);
 ?>
 
-<main class="content-section">
+<main class="content-section detail-page">
     <div class="detail-container">
         <div class="detail-background">
             <h2 class="neon-text"><?php echo htmlspecialchars($details['title'] ?? $details['name'] ?? 'Titre indisponible'); ?></h2>
