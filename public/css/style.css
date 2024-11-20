@@ -482,12 +482,15 @@ h1, h2, h3, .navbar a, .footer-nav {
 .reply-link {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    cursor: pointer;
     font-size: 0.9em;
-    font-style: italic;
+    margin-left: 10px;
 }
 
 .reply-link:hover {
-    text-shadow: 0 0 10px white;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
 }
 
 .comment-content {

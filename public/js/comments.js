@@ -6,6 +6,6 @@ document.querySelectorAll('.reply-link').forEach(link => {
         replyForm.style.display = 'block';
         replyForm.querySelector('#reply-parent-id').value = commentId;
 
-        this.parentElement.parentElement.appendChild(replyForm);
+        this.closest('.comment').appendChild(replyForm);
     });
 });    

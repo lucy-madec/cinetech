@@ -12,8 +12,17 @@ function renderComments($comments, $level = 0)
         echo '<div class="comment" style="margin-left: ' . (20 * $level) . 'px;">';
         echo '<p class="comment-meta">';
         echo htmlspecialchars($comment['username'] ?? 'Unknown') . ' - ' . date('d/m/Y H:i', strtotime($comment['created_at']));
-        echo ' <a href="#" class="reply-link" data-comment-id="' . htmlspecialchars($comment['id']) . '">Répondre</a>';
+
+        echo ' <a href="#" class="reply-link neon-text" data-comment-id="' . htmlspecialchars($comment['id'] ?? '') . '">Répondre</a>';
+
+        if (isset($_SESSION['user_id']) && $_SESSION['user_id'] === ($comment['user_id'] ?? null)) {
+            echo ' <a href="?page=delete-comment&comment_id=' . htmlspecialchars($comment['id'] ?? '') . '&element_id=' . htmlspecialchars($comment['element_id'] ?? '') . '&element_type=' . htmlspecialchars($comment['element_type'] ?? '') . '" class="delete-icon" title="Supprimer le commentaire">';
+            echo '<i class="fa fa-trash"></i>';
+            echo '</a>';
+        }
+
         echo '</p>';
+
         echo '<p class="comment-content">' . htmlspecialchars($comment['content'] ?? '') . '</p>';
 
         if (!empty($comment['children'])) {
