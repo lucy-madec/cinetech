@@ -96,8 +96,8 @@ function renderComments($comments, $level = 0)
         <h3>Commentaires</h3>
         <?php if (isset($_SESSION['user_id'])): ?>
             <form action="?page=add-comment" method="post" class="comment-form">
-                <input type="hidden" name="element_id" value="<?php echo $details['id']; ?>">
-                <input type="hidden" name="element_type" value="<?php echo $type; ?>">
+                <input type="hidden" name="element_id" value="<?php echo htmlspecialchars($details['id'] ?? ''); ?>">
+                <input type="hidden" name="element_type" value="<?php echo htmlspecialchars($type ?? ''); ?>">
                 <div class="input-container">
                     <i class="fa fa-comment icon"></i>
                     <textarea name="content" placeholder="Laissez un commentaire..." required></textarea>
@@ -112,10 +112,11 @@ function renderComments($comments, $level = 0)
             <?php renderComments($comments); ?>
         </div>
 
+        <!-- Formulaire de réponse -->
         <div id="reply-form-container" style="display:none; margin-left: 20px;">
             <form action="?page=add-comment" method="post" class="comment-form">
-                <input type="hidden" name="element_id" value="<?php echo $details['id']; ?>">
-                <input type="hidden" name="element_type" value="<?php echo $type; ?>">
+                <input type="hidden" name="element_id" value="<?php echo htmlspecialchars($details['id'] ?? ''); ?>">
+                <input type="hidden" name="element_type" value="<?php echo htmlspecialchars($type ?? ''); ?>">
                 <input type="hidden" name="parent_id" id="reply-parent-id">
                 <textarea name="content" placeholder="Votre réponse..." required></textarea>
                 <button type="submit" class="styled-button">Répondre</button>
