@@ -90,6 +90,7 @@ $comments = $commentsController->list($details['id'], $type);
                             <a href="?page=delete-comment&comment_id=<?php echo htmlspecialchars($comment['id'] ?? ''); ?>&element_id=<?php echo htmlspecialchars($details['id'] ?? ''); ?>&element_type=<?php echo htmlspecialchars($type ?? ''); ?>" class="delete-icon" title="Supprimer le commentaire">
                                 <i class="fa fa-trash"></i>
                             </a>
+
                         <?php endif; ?>
                     </p>
                     <p class="comment-content"><?php echo htmlspecialchars($comment['content'] ?? ''); ?></p>

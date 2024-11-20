@@ -37,12 +37,12 @@ class CommentsModel
     public function getCommentsByElement($elementId, $elementType)
     {
         $stmt = $this->pdo->prepare("
-            SELECT comments.content, comments.created_at, comments.user_id, users.username 
-            FROM comments 
-            JOIN users ON comments.user_id = users.id 
-            WHERE comments.element_id = :element_id AND comments.element_type = :element_type
-            ORDER BY comments.created_at DESC
-        ");
+        SELECT comments.id, comments.content, comments.created_at, comments.user_id, users.username 
+        FROM comments 
+        JOIN users ON comments.user_id = users.id 
+        WHERE comments.element_id = :element_id AND comments.element_type = :element_type
+        ORDER BY comments.created_at DESC
+    ");
         $stmt->execute([':element_id' => $elementId, ':element_type' => $elementType]);
         return $stmt->fetchAll();
     }
@@ -54,5 +54,7 @@ class CommentsModel
             WHERE id = :comment_id AND user_id = :user_id
         ");
         $stmt->execute([':comment_id' => $commentId, ':user_id' => $userId]);
+
+        return $stmt->rowCount() > 0;
     }
 }
