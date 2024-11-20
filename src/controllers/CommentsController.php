@@ -36,7 +36,7 @@ class CommentsController
 
     public function list($elementId, $elementType)
     {
-        return $this->commentsModel->getCommentsByElement($elementId, $elementType);
+        return $this->commentsModel->getCommentsTreeByElement($elementId, $elementType);
     }
 
     public function delete()

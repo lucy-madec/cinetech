@@ -5,6 +5,24 @@ include __DIR__ . '/partials/header.php';
 
 $commentsController = new \Controllers\CommentsController();
 $comments = $commentsController->list($details['id'], $type);
+
+function renderComments($comments, $level = 0)
+{
+    foreach ($comments as $comment) {
+        echo '<div class="comment" style="margin-left: ' . (20 * $level) . 'px;">';
+        echo '<p class="comment-meta">';
+        echo htmlspecialchars($comment['username'] ?? 'Unknown') . ' - ' . date('d/m/Y H:i', strtotime($comment['created_at']));
+        echo ' <a href="#" class="reply-link" data-comment-id="' . htmlspecialchars($comment['id']) . '">Répondre</a>';
+        echo '</p>';
+        echo '<p class="comment-content">' . htmlspecialchars($comment['content'] ?? '') . '</p>';
+
+        if (!empty($comment['children'])) {
+            renderComments($comment['children'], $level + 1);
+        }
+
+        echo '</div>';
+    }
+}
 ?>
 
 <main class="content-section detail-page">
@@ -82,20 +100,17 @@ $comments = $commentsController->list($details['id'], $type);
         <?php endif; ?>
 
         <div class="comments-list">
-            <?php foreach ($comments as $comment): ?>
-                <div class="comment">
-                    <p class="comment-meta">
-                        <?php echo htmlspecialchars($comment['username'] ?? 'Utilisateur inconnu'); ?> - <?php echo date('d/m/Y H:i', strtotime($comment['created_at'])); ?>
-                        <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] === $comment['user_id']): ?>
-                            <a href="?page=delete-comment&comment_id=<?php echo htmlspecialchars($comment['id'] ?? ''); ?>&element_id=<?php echo htmlspecialchars($details['id'] ?? ''); ?>&element_type=<?php echo htmlspecialchars($type ?? ''); ?>" class="delete-icon" title="Supprimer le commentaire">
-                                <i class="fa fa-trash"></i>
-                            </a>
+            <?php renderComments($comments); ?>
+        </div>
 
-                        <?php endif; ?>
-                    </p>
-                    <p class="comment-content"><?php echo htmlspecialchars($comment['content'] ?? ''); ?></p>
-                </div>
-            <?php endforeach; ?>
+        <div id="reply-form-container" style="display:none; margin-left: 20px;">
+            <form action="?page=add-comment" method="post" class="comment-form">
+                <input type="hidden" name="element_id" value="<?php echo $details['id']; ?>">
+                <input type="hidden" name="element_type" value="<?php echo $type; ?>">
+                <input type="hidden" name="parent_id" id="reply-parent-id">
+                <textarea name="content" placeholder="Votre réponse..." required></textarea>
+                <button type="submit" class="styled-button">Répondre</button>
+            </form>
         </div>
     </div>
 </main>

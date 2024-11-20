@@ -470,3 +470,26 @@ h1, h2, h3, .navbar a, .footer-nav {
 .delete-icon:hover i {
     transform: scale(1.2);
 }
+
+.comment {
+    margin-bottom: 10px;
+}
+
+.comment-meta {
+    font-weight: bold;
+}
+
+.reply-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.reply-link:hover {
+    text-shadow: 0 0 10px white;
+}
+
+.comment-content {
+    margin: 5px 0;
+}
