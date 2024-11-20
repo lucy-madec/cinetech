@@ -50,20 +50,20 @@ class CommentsController
             $commentId = $_GET['comment_id'];
             $userId = $_SESSION['user_id'];
 
-            if (empty($commentId)) {
-                echo "Erreur : `comment_id` est vide.";
-                exit;
-            }
-
             $success = $this->commentsModel->deleteComment($commentId, $userId);
 
             if (!$success) {
-                echo "Erreur : Impossible de supprimer le commentaire.";
+                echo "Erreur : Impossible de supprimer ce commentaire.";
                 exit;
             }
 
-            $elementId = $_GET['element_id'];
-            $elementType = $_GET['element_type'];
+            $elementId = $_GET['element_id'] ?? null;
+            $elementType = $_GET['element_type'] ?? null;
+            if (!$elementId || !$elementType) {
+                echo "Erreur : ID non spécifié pour la page de détail.";
+                exit;
+            }
+
             header('Location: ?page=detail&type=' . $elementType . '&id=' . $elementId);
             exit;
         }
