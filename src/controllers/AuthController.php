@@ -20,7 +20,13 @@ class AuthController
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $this->userModel->register($username, $email, $password);
+            $error = $this->userModel->register($username, $email, $password);
+            if ($error) {
+                require_once __DIR__ . '/../views/register.php';
+                echo '<p class="error-message">' . htmlspecialchars($error) . '</p>';
+                return;
+            }
+
             header('Location: ?page=login');
             exit;
         }

@@ -20,13 +20,21 @@ class UserModel
 
     public function register($username, $email, $password)
     {
-        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-        $stmt = $this->pdo->prepare("INSERT INTO users (username, email, password) VALUE (:username, :email, :password)");
-        $stmt->execute([
-            ':username' => $username,
-            ':email' => $email,
-            ':password' => $hashedPassword,
-        ]);
+        try {
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            $stmt = $this->pdo->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
+            $stmt->execute([
+                ':username' => $username,
+                ':email' => $email,
+                ':password' => $hashedPassword,
+            ]);
+        } catch (\PDOException $e) {
+            if ($e->getCode() == 23000) {
+                return 'Le nom d\'utilisateur ou l\'email existe déjà.';
+            }
+            throw $e;
+        }
+        return null;
     }
 
     public function login($email, $password)
