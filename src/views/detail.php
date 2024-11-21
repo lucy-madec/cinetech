@@ -14,7 +14,9 @@ function renderComments($comments, $level = 0)
         echo htmlspecialchars($comment['username'] ?? 'Unknown') . ' - ' . date('d/m/Y H:i', strtotime($comment['created_at']));
 
         if (isset($_SESSION['user_id'])) {
-            echo ' <a href="#" class="reply-link neon-text" data-comment-id="' . htmlspecialchars($comment['id'] ?? '') . '">Répondre</a>';
+            echo ' <a href="#" class="reply-link neon-text" data-comment-id="' . htmlspecialchars($comment['id'] ?? '') . '">';
+            echo '<i class="fa fa-reply"></i>';
+            echo '</a>';
         }
 
         if (isset($_SESSION['user_id']) && $_SESSION['user_id'] === ($comment['user_id'] ?? null)) {
@@ -121,7 +123,7 @@ function renderComments($comments, $level = 0)
                     <input type="hidden" name="element_type" value="<?php echo htmlspecialchars($type ?? ''); ?>">
                     <input type="hidden" name="parent_id" id="reply-parent-id">
                     <textarea name="content" placeholder="Votre réponse..." required></textarea>
-                    <button type="button" class="styled-button" onclick="closeReplyForm()">Annuler</button>
+                    <button type="button" class="styled-button cancel-button" onclick="closeReplyForm()">Annuler</button>
                     <button type="submit" class="styled-button">Répondre</button>
                 </form>
             </div>

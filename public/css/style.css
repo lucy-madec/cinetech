@@ -395,22 +395,34 @@ h1, h2, h3, .navbar a, .footer-nav {
 }
 
 .styled-button {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: transparent;
     border: 2px solid transparent;
     color: #ffffff;
-    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
-    box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
+    text-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff;
+    box-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff, 0 0 9px #ffffff;
     padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     border-radius: 5px;
     box-sizing: border-box;
     margin-top: 20px;
-    align-self: center; /* Center the button */
+    align-self: center;
 }
 
 .styled-button:hover {
-    background-color: rgba(255, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cancel-button {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+    box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+}
+
+.cancel-button:hover {
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
 /* Comments section */
@@ -643,4 +655,32 @@ form {
     min-height: 50px;
     box-sizing: border-box;
     padding: 10px;
+}
+
+.styled-button i {
+    font-size: 1em;
+    color: #ffffff;
+    text-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff;
+    box-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff, 0 0 9px #ffffff;
+}
+
+.delete-icon i {
+    font-size: 1em;
+    color: #ffffff;
+    transition: transform 0.2s ease;
+}
+
+.delete-icon:hover i {
+    transform: scale(1.2);
+}
+
+.reply-link i {
+    font-size: 1em;
+    color: #ffffff;
+    text-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff;
+    transition: transform 0.2s ease;
+}
+
+.reply-link:hover i {
+    transform: scale(1.2);
 }
