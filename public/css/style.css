@@ -1,13 +1,21 @@
 /* Global styles */
-body {
-    font-family: "Tilt Neon", sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: "Tilt Neon", sans-serif;
     background-image: url("/cinetech/public/images/background.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;
+    flex: 1;
 }
 
 /* Title and link styles with uppercase and neon effect */
@@ -124,12 +132,17 @@ h1, h2, h3, .navbar a, .footer-nav {
 
 /* Main content section */
 .content-section {
+    flex: 1;
     padding: 20px;
     max-width: 1200px;
     margin: auto;
     display: flex;
     flex-direction: column;
     gap: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
 }
 
 .items-grid {
@@ -247,7 +260,7 @@ h1, h2, h3, .navbar a, .footer-nav {
     justify-content: center;
     color: white;
     border-top: 2px solid rgba(255, 0, 0, 0.8);
-    margin-top: 30px;
+    width: 100%;
 }
 
 .footer-content {
@@ -352,7 +365,6 @@ h1, h2, h3, .navbar a, .footer-nav {
 }
 
 .input-container {
-    flex: 1;
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
@@ -362,7 +374,9 @@ h1, h2, h3, .navbar a, .footer-nav {
     padding: 15px;
     border-radius: 5px;
     box-sizing: border-box;
-    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 10px auto; /* Center the input containers */
 }
 
 .input-container .icon {
@@ -370,16 +384,17 @@ h1, h2, h3, .navbar a, .footer-nav {
     color: #ffffff;
 }
 
-.input-container input {
+.input-container input, .input-container textarea {
     border: none;
     outline: none;
     background: transparent;
     color: #ffffff;
     width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
 }
 
 .styled-button {
-    align-self: center;
     background-color: rgba(0, 0, 0, 0.7);
     border: 2px solid transparent;
     color: #ffffff;
@@ -391,6 +406,7 @@ h1, h2, h3, .navbar a, .footer-nav {
     border-radius: 5px;
     box-sizing: border-box;
     margin-top: 20px;
+    align-self: center; /* Center the button */
 }
 
 .styled-button:hover {
@@ -403,8 +419,10 @@ h1, h2, h3, .navbar a, .footer-nav {
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
-    max-width: 100%;
+    max-width: 900px;
+    width: 100%;
     box-sizing: border-box;
+    margin: 20px auto;
 }
 
 .comment-form {
@@ -424,6 +442,7 @@ h1, h2, h3, .navbar a, .footer-nav {
     padding: 15px;
     border-radius: 5px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .input-container textarea {
@@ -510,4 +529,62 @@ h1, h2, h3, .navbar a, .footer-nav {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+/* Ensure the body and html take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content should take the remaining space */
+.content-section {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Footer should stick to the bottom */
+.site-footer {
+    background-color: #000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-top: 2px solid rgba(255, 0, 0, 0.8);
+    width: 100%;
+}
+
+.input-container input {
+    width: 100%;
+    max-width: 600px;
+}
+
+.input-container {
+    width: 100%;
+}
+
+.input-container input {
+    width: 100%;
+    max-width: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments horizontalement */
+}
+
+.styled-button {
+    margin-top: 20px; /* Ajoute un espace au-dessus du bouton */
+    align-self: center; /* Centre le bouton sous les inputs */
 }
