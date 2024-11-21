@@ -474,6 +474,7 @@ h1, h2, h3, .navbar a, .footer-nav {
     overflow: hidden;
     min-height: 50px;
     box-sizing: border-box;
+    padding: 10px;
 }
 
 .comment-meta {
@@ -600,10 +601,46 @@ html, body {
 form {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre les éléments horizontalement */
+    align-items: center;
 }
 
 .styled-button {
-    margin-top: 20px; /* Ajoute un espace au-dessus du bouton */
-    align-self: center; /* Centre le bouton sous les inputs */
+    margin-top: 20px;
+    align-self: center;
+}
+
+#reply-form-container {
+    display: none;
+    margin-left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+    padding: 15px;
+}
+
+#reply-form-container .comment-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#reply-form-container .input-container {
+    flex-grow: 1;
+}
+
+#reply-form-container textarea {
+    width: 100%;
+    resize: none;
+    min-height: 50px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    min-height: 50px;
+    box-sizing: border-box;
+    padding: 10px;
 }
