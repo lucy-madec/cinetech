@@ -3,6 +3,11 @@
 
 <main class="content-section">
     <h2>Inscription</h2>
+    <?php if (isset($error) && $error): ?>
+        <div class="error-message">
+            <?php echo htmlspecialchars($error); ?>
+        </div>
+    <?php endif; ?>
     <form action="?page=register" method="post">
         <div class="input-container">
             <i class="fa fa-user icon"></i>
