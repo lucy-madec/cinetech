@@ -37,7 +37,7 @@ class AuthController
             $user = $this->userModel->login($email, $password);
             if ($user) {
                 $_SESSION['user_id'] = $user['id'];
-                header('Location: ?page=favoris');
+                header('Location: ?page=home');
                 exit;
             }
 
@@ -50,7 +50,7 @@ class AuthController
     public function logout()
     {
         session_destroy();
-        header('Location: ?page=login');
+        header('Location: ?page=home');
         exit;
     }
 }
