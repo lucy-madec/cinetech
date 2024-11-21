@@ -13,7 +13,9 @@ function renderComments($comments, $level = 0)
         echo '<p class="comment-meta">';
         echo htmlspecialchars($comment['username'] ?? 'Unknown') . ' - ' . date('d/m/Y H:i', strtotime($comment['created_at']));
 
-        echo ' <a href="#" class="reply-link neon-text" data-comment-id="' . htmlspecialchars($comment['id'] ?? '') . '">Répondre</a>';
+        if (isset($_SESSION['user_id'])) {
+            echo ' <a href="#" class="reply-link neon-text" data-comment-id="' . htmlspecialchars($comment['id'] ?? '') . '">Répondre</a>';
+        }
 
         if (isset($_SESSION['user_id']) && $_SESSION['user_id'] === ($comment['user_id'] ?? null)) {
             echo ' <a href="?page=delete-comment&comment_id=' . htmlspecialchars($comment['id'] ?? '') . '&element_id=' . htmlspecialchars($comment['element_id'] ?? '') . '&element_type=' . htmlspecialchars($comment['element_type'] ?? '') . '" class="delete-icon" title="Supprimer le commentaire">';
@@ -112,16 +114,19 @@ function renderComments($comments, $level = 0)
             <?php renderComments($comments); ?>
         </div>
 
-        <!-- Formulaire de réponse -->
-        <div id="reply-form-container" style="display:none; margin-left: 20px;">
-            <form action="?page=add-comment" method="post" class="comment-form">
-                <input type="hidden" name="element_id" value="<?php echo htmlspecialchars($details['id'] ?? ''); ?>">
-                <input type="hidden" name="element_type" value="<?php echo htmlspecialchars($type ?? ''); ?>">
-                <input type="hidden" name="parent_id" id="reply-parent-id">
-                <textarea name="content" placeholder="Votre réponse..." required></textarea>
-                <button type="submit" class="styled-button">Répondre</button>
-            </form>
-        </div>
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <div id="reply-form-container" style="display:none; margin-left: 20px;">
+                <form action="?page=add-comment" method="post" class="comment-form">
+                    <input type="hidden" name="element_id" value="<?php echo htmlspecialchars($details['id'] ?? ''); ?>">
+                    <input type="hidden" name="element_type" value="<?php echo htmlspecialchars($type ?? ''); ?>">
+                    <input type="hidden" name="parent_id" id="reply-parent-id">
+                    <textarea name="content" placeholder="Votre réponse..." required></textarea>
+                    <button type="submit" class="styled-button">Répondre</button>
+                </form>
+            </div>
+        <?php else: ?>
+            <p class="login-prompt">Veuillez vous connecter pour répondre à un commentaire.</p>
+        <?php endif; ?>
     </div>
 </main>
 
