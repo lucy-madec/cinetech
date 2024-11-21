@@ -66,8 +66,16 @@ class Router
                 $controller->logout();
                 break;
             case 'delete-comment':
-                $controller = new \Controllers\CommentsController();
-                $controller->delete();
+                $commentId = $_GET['comment_id'] ?? null;
+                $userId = $_SESSION['user_id'] ?? null;
+
+                if ($commentId && $userId) {
+                    $commentsController = new \Controllers\CommentsController();
+                    $commentsController->delete($commentId, $userId);
+                } else {
+                    header('Location: ?page=detail&error=Paramètres manquants pour la suppression du commentaire.');
+                    exit;
+                }
                 break;
         }
     }

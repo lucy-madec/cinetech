@@ -39,33 +39,12 @@ class CommentsController
         return $this->commentsModel->getCommentsTreeByElement($elementId, $elementType);
     }
 
-    public function delete()
+    public function delete($commentId, $userId)
     {
-        if (!isset($_SESSION['user_id'])) {
-            header('Location: ?page=login');
-            exit;
-        }
+        $commentsModel = new \Models\CommentsModel();
+        $success = $commentsModel->deleteComment($commentId, $userId);
 
-        if (isset($_GET['comment_id'])) {
-            $commentId = $_GET['comment_id'];
-            $userId = $_SESSION['user_id'];
-
-            $success = $this->commentsModel->deleteComment($commentId, $userId);
-
-            if (!$success) {
-                echo "Erreur : Impossible de supprimer ce commentaire.";
-                exit;
-            }
-
-            $elementId = $_GET['element_id'] ?? null;
-            $elementType = $_GET['element_type'] ?? null;
-            if (!$elementId || !$elementType) {
-                echo "Erreur : ID non spécifié pour la page de détail.";
-                exit;
-            }
-
-            header('Location: ?page=detail&type=' . $elementType . '&id=' . $elementId);
-            exit;
-        }
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit;
     }
 }
