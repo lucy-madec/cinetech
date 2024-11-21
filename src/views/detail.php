@@ -107,7 +107,7 @@ function renderComments($comments, $level = 0)
                 <button type="submit" class="styled-button">Envoyer</button>
             </form>
         <?php else: ?>
-            <p class="login-prompt">Veuillez vous connecter pour laisser un commentaire.</p>
+            <p class="login-prompt">Veuillez vous connecter pour laisser ou répondre à un commentaire.</p>
         <?php endif; ?>
 
         <div class="comments-list">
@@ -124,8 +124,6 @@ function renderComments($comments, $level = 0)
                     <button type="submit" class="styled-button">Répondre</button>
                 </form>
             </div>
-        <?php else: ?>
-            <p class="login-prompt">Veuillez vous connecter pour répondre à un commentaire.</p>
         <?php endif; ?>
     </div>
 </main>
