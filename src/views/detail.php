@@ -121,6 +121,7 @@ function renderComments($comments, $level = 0)
                     <input type="hidden" name="element_type" value="<?php echo htmlspecialchars($type ?? ''); ?>">
                     <input type="hidden" name="parent_id" id="reply-parent-id">
                     <textarea name="content" placeholder="Votre réponse..." required></textarea>
+                    <button type="button" class="styled-button" onclick="closeReplyForm()">Annuler</button>
                     <button type="submit" class="styled-button">Répondre</button>
                 </form>
             </div>
@@ -129,3 +130,8 @@ function renderComments($comments, $level = 0)
 </main>
 
 <?php include __DIR__ . '/partials/footer.php'; ?>
+<script>
+function closeReplyForm() {
+    document.getElementById('reply-form-container').style.display = 'none';
+}
+</script>
