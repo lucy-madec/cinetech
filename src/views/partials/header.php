@@ -3,8 +3,9 @@
         <img src="/cinetech/public/images/favicon.png" alt="Logo Cinetech" class="logo-icon">
         CINETECH<?php if (isset($_SESSION['user_id'])): ?> <span class="user-info">de <?php echo htmlspecialchars($_SESSION['username']); ?></span><?php endif; ?>
     </h1>
-    <button class="burger-menu" aria-label="Toggle navigation">
+    <button class="burger-menu" aria-label="Toggle navigation" onclick="toggleMenu()">
         <i class="fa fa-bars"></i>
+        <i class="fa fa-times" style="display: none;"></i>
     </button>
     <nav class="navbar">
         <a href="?page=home" class="neon-text">Accueil</a>
