@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const iconTimes = burgerMenu.querySelector('.fa-times');
 
     burgerMenu.addEventListener('click', function() {
-        navbar.classList.toggle('active');
-        iconBars.style.display = iconBars.style.display === 'none' ? 'block' : 'none';
-        iconTimes.style.display = iconTimes.style.display === 'none' ? 'block' : 'none';
+        if (window.innerWidth <= 768) {
+            navbar.classList.toggle('active');
+            iconBars.style.display = iconBars.style.display === 'none' ? 'block' : 'none';
+            iconTimes.style.display = iconTimes.style.display === 'none' ? 'block' : 'none';
+        }
     });
 }); 

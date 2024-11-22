@@ -701,8 +701,11 @@ form {
     }
 
     .navbar {
-        flex-direction: column;
-        gap: 10px;
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
     }
 
     .items-grid {
@@ -719,7 +722,6 @@ form {
     }
 }
 
-/* Pour les petits écrans */
 @media (max-width: 480px) {
     .items-grid {
         grid-template-columns: 1fr;
@@ -783,8 +785,24 @@ form {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
     .burger-menu {
         display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .burger-menu {
+        display: none;
     }
 }
 
@@ -808,4 +826,26 @@ form {
 
 .burger-menu.active .fa-times {
     display: block; /* Show the times icon when active */
+}
+
+@media (min-width: 769px) {
+    .navbar {
+        display: flex; /* Afficher la barre de navigation sur les écrans plus larges */
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .burger-menu {
+        display: none; /* Masquer le menu burger sur les écrans plus larges */
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
 }
