@@ -81,6 +81,10 @@ class Router
                 $controller = new \Controllers\ContactController();
                 $controller->index();
                 break;
+            case 'send-message':
+                $controller = new \Controllers\ContactController();
+                $controller->sendMessage();
+                break;
         }
     }
 }
