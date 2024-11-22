@@ -395,7 +395,7 @@ h1, h2, h3, .navbar a, .footer-nav {
 }
 
 .styled-button {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
     border: 2px solid transparent;
     color: #ffffff;
     text-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff;
@@ -410,7 +410,7 @@ h1, h2, h3, .navbar a, .footer-nav {
 }
 
 .styled-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .cancel-button {
