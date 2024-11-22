@@ -749,7 +749,7 @@ form {
     z-index: 1001;
     position: absolute;
     right: 20px;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
 }
 
@@ -782,6 +782,17 @@ form {
 
 .navbar.active {
     display: flex; /* Show when active */
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
 }
 
 @media (max-width: 768px) {
