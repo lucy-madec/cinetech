@@ -41,6 +41,7 @@ class AuthController
             $user = $this->userModel->login($email, $password);
             if ($user) {
                 $_SESSION['user_id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
                 header('Location: ?page=home');
                 exit;
             }

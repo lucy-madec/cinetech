@@ -1,7 +1,7 @@
 <header class="site-header">
     <h1 class="neon-text">
         <img src="/cinetech/public/images/favicon.png" alt="Logo Cinetech" class="logo-icon">
-        Cinetech
+        CINETECH<?php if (isset($_SESSION['user_id'])): ?> <span class="user-info">de <?php echo htmlspecialchars($_SESSION['username']); ?></span><?php endif; ?>
     </h1>
     <nav class="navbar">
         <a href="?page=home" class="neon-text">Accueil</a>

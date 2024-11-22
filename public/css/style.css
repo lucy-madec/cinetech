@@ -684,3 +684,11 @@ form {
 .reply-link:hover i {
     transform: scale(1.2);
 }
+
+.username {
+    text-transform: none;
+}
+
+.user-info {
+    text-transform: none;
+}
