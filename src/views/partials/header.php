@@ -11,6 +11,7 @@
         <a href="?page=home" class="neon-text">Accueil</a>
         <a href="?page=movies" class="neon-text">Films</a>
         <a href="?page=series" class="neon-text">Séries</a>
+        <a href="?page=contact" class="neon-text">Contact</a>
         <form action="" class="search-bar" method="get" onsubmit="return false;">
             <input type="text" id="search-input" autocomplete="off" placeholder="Rechercher...">
             <div id="search-results"></div>

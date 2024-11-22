@@ -77,6 +77,10 @@ class Router
                     exit;
                 }
                 break;
+            case 'contact':
+                $controller = new \Controllers\ContactController();
+                $controller->index();
+                break;
         }
     }
 }
