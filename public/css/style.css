@@ -782,3 +782,25 @@ form {
         display: flex;
     }
 }
+
+.burger-menu i {
+    font-size: 2rem; /* Increase the size of the icons */
+    color: #fff; /* Set the color to white */
+    transition: all 0.3s ease;
+}
+
+.burger-menu .fa-bars {
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff; /* White neon effect */
+}
+
+.burger-menu .fa-times {
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000; /* Red neon effect */
+}
+
+.burger-menu.active .fa-bars {
+    display: none; /* Hide the bars icon when active */
+}
+
+.burger-menu.active .fa-times {
+    display: block; /* Show the times icon when active */
+}
