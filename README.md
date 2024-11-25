@@ -43,7 +43,7 @@ Cinetech is a library of films and series, thanks to a public API available onli
      ```
 5. 🌍**Start the local server:**
    - If you’re using tools like Laragon or XAMPP, simply start the server.
-     ```
+
 ## 🛠️Methods and Features
 
 ### 1. 📐**MVC Architecture**
