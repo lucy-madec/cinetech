@@ -397,21 +397,21 @@ h1, h2, h3, .navbar a, .footer-nav {
 
 .styled-button {
     background-color: rgba(0, 0, 0, 0.5);
-    border: 2px solid transparent;
-    color: #ffffff;
-    text-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff;
-    box-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff, 0 0 9px #ffffff;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-top: 20px;
-    align-self: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
 }
 
 .styled-button:hover {
     background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
 }
 
 .cancel-button {
@@ -562,15 +562,6 @@ h1, h2, h3, .navbar a, .footer-nav {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-}
-
-/* Ensure the body and html take full height */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
 }
 
 /* Main content should take the remaining space */
@@ -735,6 +726,14 @@ form {
     .site-header h1 {
         font-size: 1.5em;
     }
+
+    .navbar {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
 }
 
 .burger-menu {
@@ -793,16 +792,6 @@ form {
     width: 100%;
     z-index: 1000;
     padding: 10px 0;
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
-
-    .burger-menu {
-        display: flex;
-    }
 }
 
 @media (min-width: 769px) {
@@ -896,9 +885,7 @@ form {
 }
 
 .contact-form button {
-    align-self: center;
-    padding: 10px 20px;
-    background-color: #ff0000;
+    background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -907,5 +894,5 @@ form {
 }
 
 .contact-form button:hover {
-    background-color: #cc0000;
+    background-color: rgba(0, 0, 0, 0.7);
 }
