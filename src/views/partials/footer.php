@@ -1,14 +1,35 @@
 <footer class="site-footer">
     <div class="footer-content">
-        <p class="neon-text">© Cinetech. Tous droits réservés.</p>
-        <nav class="footer-nav">
-            <a href="?page=home" class="neon-text">Accueil</a>
-            <a href="?page=movies">Films</a>
-            <a href="?page=series" class="neon-text">Séries</a>
-            <a href="?page=contact" class="neon-text">Contact</a>
-        </nav>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3 class="footer-title neon-text">À propos</h3>
+                <p>Cinetech est votre destination cinéma et séries, offrant les dernières sorties et les classiques intemporels.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title neon-text">Navigation</h3>
+                <nav class="footer-nav">
+                    <a href="?page=home"><i class="fa fa-home"></i> Accueil</a>
+                    <a href="?page=movies"><i class="fa fa-film"></i> Films</a>
+                    <a href="?page=series"><i class="fa fa-tv"></i> Séries</a>
+                    <a href="?page=contact"><i class="fa fa-envelope"></i> Contact</a>
+                </nav>
+            </div>
+
+            <div class="footer-section">
+                <h3 class="footer-title neon-text">Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">  <?php echo date('Y'); ?> Cinetech. Tous droits réservés.</p>
+        </div>
     </div>
 </footer>
 </body>
-
 </html>
