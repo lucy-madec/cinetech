@@ -3,7 +3,7 @@
         <h1 class="site-title">
             <a href="?page=home" class="logo-link">
                 <img src="/cinetech/public/images/favicon.png" alt="Logo Cinetech" class="logo-icon">
-                <span class="neon-text">CINETECH</span>
+                <span>CINETECH</span>
             </a>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <span class="user-badge">

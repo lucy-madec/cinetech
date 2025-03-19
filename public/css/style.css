@@ -21,7 +21,7 @@ body {
 /* Title and link styles with uppercase and neon effect */
 h1, h2, h3, .navbar a, .footer-nav {
     text-transform: uppercase;
-    color: #fff;
+    color: #ffffff;
     text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
 }
 
@@ -58,6 +58,12 @@ h1, h2, h3, .navbar a, .footer-nav {
     align-items: center;
     text-decoration: none;
     gap: 1rem;
+}
+
+.logo-link span {
+    color: #ffffff;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
+    text-transform: uppercase;
 }
 
 .logo-icon {
