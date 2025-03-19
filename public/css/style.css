@@ -123,12 +123,14 @@ h1, h2, h3, .navbar a, .footer-nav {
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
+    width: 100%;
     background: #000;
     border: 1px solid #ff0000;
+    border-radius: 20px;
     max-height: 300px;
     overflow: auto;
     display: none;
+    margin-top: 5px;
 }
 
 .search-results-dropdown:not(:empty) {
@@ -138,9 +140,17 @@ h1, h2, h3, .navbar a, .footer-nav {
 .search-result-item {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 10px 15px;
     color: #fff;
     text-decoration: none;
+}
+
+.search-result-item:first-child {
+    border-radius: 20px 20px 0 0;
+}
+
+.search-result-item:last-child {
+    border-radius: 0 0 20px 20px;
 }
 
 .search-result-item:hover {
