@@ -6,7 +6,7 @@ if (searchInput && searchResults) {
     const query = searchInput.value.trim();
 
     if (query.length < 2) {
-      searchResults.innerHTML = ""; // Reset results if search is empty or too short
+      searchResults.innerHTML = "";
       return;
     }
 
@@ -14,29 +14,32 @@ if (searchInput && searchResults) {
       const response = await fetch(
         `/cinetech/?page=search&query=${encodeURIComponent(query)}`
       );
-      if (!response.ok) {
-        throw new Error("Erreur lors de la récupération des résultats");
-      }
+      if (!response.ok) throw new Error("Erreur de recherche");
+      
       const results = await response.json();
-
+      
       searchResults.innerHTML = results
-        .slice(0, 10) // Limit of 10 results
+        .slice(0, 5)
         .map(
           (result) => `
-                <a href="?page=detail&type=${result.media_type}&id=${
-            result.id
-          }" class="search-result">
-                    <img src="https://image.tmdb.org/t/p/w92${
-                      result.poster_path || ""
-                    }" alt="${result.title || result.name}" />
-                    <span>${result.title || result.name}</span>
-                </a>
-            `
+            <a href="?page=detail&type=${result.media_type}&id=${result.id}" class="search-result-item">
+                <img src="https://image.tmdb.org/t/p/w92${result.poster_path || '/cinetech/public/images/no-poster.png'}" 
+                     alt="${result.title || result.name}" 
+                     onerror="this.src='/cinetech/public/images/no-poster.png'" />
+                <span>${result.title || result.name}</span>
+            </a>
+          `
         )
         .join("");
     } catch (error) {
-      console.error("Erreur de recherche :", error);
-      searchResults.innerHTML = "<p>Erreur lors de la recherche.</p>";
+      console.error("Erreur:", error);
+      searchResults.innerHTML = "";
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+      searchResults.innerHTML = '';
     }
   });
 }

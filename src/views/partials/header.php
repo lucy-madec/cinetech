@@ -19,8 +19,8 @@
             <div class="search-wrapper">
                 <i class="fa fa-search search-icon"></i>
                 <input type="text" id="search-input" autocomplete="off" placeholder="Rechercher un film ou une série...">
+                <div id="search-results" class="search-results-dropdown"></div>
             </div>
-            <div id="search-results" class="search-results-dropdown"></div>
         </form>
     </div>
 

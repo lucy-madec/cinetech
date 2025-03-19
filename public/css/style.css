@@ -119,6 +119,39 @@ h1, h2, h3, .navbar a, .footer-nav {
     color: rgba(255, 255, 255, 0.5);
 }
 
+.search-results-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #000;
+    border: 1px solid #ff0000;
+    max-height: 300px;
+    overflow: auto;
+    display: none;
+}
+
+.search-results-dropdown:not(:empty) {
+    display: block;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.search-result-item:hover {
+    background: #1a1a1a;
+}
+
+.search-result-item img {
+    width: 45px;
+    margin-right: 10px;
+}
+
 /* Navigation */
 .nav-links {
     display: flex;
