@@ -15,15 +15,6 @@
                     <a href="?page=contact"><i class="fa fa-envelope"></i> Contact</a>
                 </nav>
             </div>
-
-            <div class="footer-section">
-                <h3 class="footer-title neon-text">Suivez-nous</h3>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fa fa-instagram"></i></a>
-                </div>
-            </div>
         </div>
 
         <div class="footer-bottom">
