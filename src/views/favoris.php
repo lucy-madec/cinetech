@@ -20,12 +20,14 @@ include __DIR__ . '/partials/header.php';
                         <img src="https://image.tmdb.org/t/p/w200<?php echo htmlspecialchars($favori['poster_path']); ?>" alt="<?php echo htmlspecialchars($favori['title']); ?>">
                     </a>
                     <p><strong><?php echo htmlspecialchars($favori['title']); ?></strong></p>
+                    <?php if (isset($_SESSION['user_id'])): ?>
                     <form action="?page=remove-favori" method="post">
                         <input type="hidden" name="element_id" value="<?php echo $favori['element_id']; ?>">
                         <button type="submit" class="favorite-button" title="Retirer des favoris">
                             <i class="fa fa-star filled"></i>
                         </button>
                     </form>
+                    <?php endif; ?>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
@@ -46,12 +48,14 @@ include __DIR__ . '/partials/header.php';
                         <img src="https://image.tmdb.org/t/p/w200<?php echo htmlspecialchars($favori['poster_path']); ?>" alt="<?php echo htmlspecialchars($favori['title']); ?>">
                     </a>
                     <p><strong><?php echo htmlspecialchars($favori['title']); ?></strong></p>
+                    <?php if (isset($_SESSION['user_id'])): ?>
                     <form action="?page=remove-favori" method="post">
                         <input type="hidden" name="element_id" value="<?php echo $favori['element_id']; ?>">
                         <button type="submit" class="favorite-button" title="Retirer des favoris">
                             <i class="fa fa-star filled"></i>
                         </button>
                     </form>
+                    <?php endif; ?>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
