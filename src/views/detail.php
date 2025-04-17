@@ -71,8 +71,31 @@ function renderComments($comments, $level = 0)
                         }
                         ?>
                     </p>
-                    <p><strong>Types :</strong> <?php echo isset($details['genres']) ? implode(', ', array_map(fn($genre) => $genre['name'], $details['genres'])) : 'N/A'; ?></p>
-                    <p><strong>Pays d'origine :</strong> <?php echo htmlspecialchars($details['origin_country'][0] ?? 'N/A'); ?></p>
+                    <p><strong>Genres :</strong> <?php
+                        if (isset($details['genres']) && is_array($details['genres'])) {
+                            $uniqueGenres = array_unique(array_map(fn($genre) => $genre['name'], $details['genres']));
+                            echo htmlspecialchars(implode(', ', $uniqueGenres));
+                        } else {
+                            echo 'N/A';
+                        }
+                    ?></p>
+                    <p><strong>Pays d'origine :</strong>
+                        <?php
+                        $countries = include __DIR__ . '/../utils/countries.php';
+                        if (isset($details['origin_country']) && is_array($details['origin_country']) && count($details['origin_country']) > 0) {
+                            foreach ($details['origin_country'] as $countryCode) {
+                                $countryCode = strtoupper($countryCode);
+                                if (isset($countries[$countryCode])) {
+                                    echo $countries[$countryCode]['flag'] . ' ' . htmlspecialchars($countries[$countryCode]['name']) . ' ';
+                                } else {
+                                    echo htmlspecialchars($countryCode) . ' ';
+                                }
+                            }
+                        } else {
+                            echo 'N/A';
+                        }
+                        ?>
+                    </p>
                     <p><strong>Résumé :</strong> <?php echo htmlspecialchars($details['overview'] ?? 'Résumé indisponible'); ?></p>
                     <p><strong>Acteurs :</strong> <?php echo isset($details['credits']['cast']) ? implode(', ', array_column($details['credits']['cast'], 'name')) : 'N/A'; ?></p>
                 </div>
