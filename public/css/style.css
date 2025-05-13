@@ -27,8 +27,8 @@ h1, h2, h3, .navbar a, .footer-nav {
 
 /* Logo icon next to text */
 .logo-icon {
-    width: 120px;
-    height: 90px;
+    width: 80px;
+    height: 60px;
     vertical-align: middle;
     margin-right: 8px;
 }
@@ -36,12 +36,12 @@ h1, h2, h3, .navbar a, .footer-nav {
 /* Header */
 .site-header {
     background-color: rgba(0, 0, 0, 0.9);
-    padding: 1rem;
+    padding: 0.7rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 1rem;
     border-bottom: 2px solid rgba(255, 0, 0, 0.3);
     position: relative;
     flex-wrap: wrap;
@@ -171,6 +171,25 @@ h1, h2, h3, .navbar a, .footer-nav {
 .nav-links {
     display: flex;
     gap: 1.5rem;
+}
+
+.logo-link {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.site-title a {
+    text-decoration: none;
+}
+
+.site-title a span {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .nav-link {
@@ -1020,12 +1039,13 @@ form {
     }
 
     .logo-icon {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
 
     .logo-link span {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
+        color: #ffffff;
     }
 
     .navbar {
