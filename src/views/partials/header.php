@@ -30,8 +30,6 @@
             <i class="fa fa-times" style="display: none;"></i>
         </button>
 
-        <div class="header-right">
-
             <nav class="navbar">
                 <div class="nav-links">
                     <a href="?page=home" class="nav-link"><i class="fa fa-home"></i> Accueil</a>

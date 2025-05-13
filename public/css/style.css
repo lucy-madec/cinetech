@@ -76,6 +76,20 @@ h1, h2, h3, .navbar a, .footer-nav {
     align-items: center;
 }
 
+.header-left {
+    flex: 1;
+}
+
+.header-center {
+    flex: 2;
+    justify-content: center;
+}
+
+.header-right {
+    flex: 1;
+    justify-content: flex-end;
+}
+
 .site-title {
     margin: 0;
     display: flex;
