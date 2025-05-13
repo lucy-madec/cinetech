@@ -1,5 +1,5 @@
 <header class="site-header">
-    <div class="header-logo-title">
+    <div class="header-left">
         <h1 class="site-title">
             <a href="?page=home" class="logo-link">
                 <img src="/cinetech/public/images/favicon.png" alt="Logo Cinetech" class="logo-icon">
@@ -14,21 +14,21 @@
         </h1>
     </div>
 
-    <div class="header-controls">
-        <div class="search-burger-container">
-            <form action="" class="search-bar" method="get" onsubmit="return false;">
-                <div class="search-wrapper">
-                    <i class="fa fa-search search-icon"></i>
-                    <input type="text" id="search-input" autocomplete="off" placeholder="Rechercher un film ou une série...">
-                    <div id="search-results" class="search-results-dropdown"></div>
-                </div>
-            </form>
-            
-            <button class="burger-menu" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-                <i class="fa fa-times" style="display: none;"></i>
-            </button>
-        </div>
+    <div class="header-center">
+        <form action="" class="search-bar" method="get" onsubmit="return false;">
+            <div class="search-wrapper">
+                <i class="fa fa-search search-icon"></i>
+                <input type="text" id="search-input" autocomplete="off" placeholder="Rechercher un film ou une série...">
+                <div id="search-results" class="search-results-dropdown"></div>
+            </div>
+        </form>
+    </div>
+    
+    <div class="header-right">
+        <button class="burger-menu" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-times" style="display: none;"></i>
+        </button>
 
         <div class="header-right">
 
