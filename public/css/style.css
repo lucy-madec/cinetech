@@ -54,8 +54,19 @@ h1, h2, h3, .navbar a, .footer-nav {
 .header-controls {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.search-burger-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 350px;
 }
 
 .header-left, .header-center, .header-right {
@@ -111,7 +122,7 @@ h1, h2, h3, .navbar a, .footer-nav {
 /* Search Bar */
 .search-wrapper {
     position: relative;
-    width: 300px;
+    width: 280px;
 }
 
 .search-icon {
@@ -1092,17 +1103,15 @@ form {
 .burger-menu {
     display: none;
     flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
     background: none;
     border: none;
     cursor: pointer;
     z-index: 1001;
-    position: absolute;
-    right: 20px;
-    top: 60%;
-    transform: translateY(-50%);
+    margin-left: 10px;
 }
 
 .burger-menu div {
@@ -1160,9 +1169,10 @@ form {
 }
 
 .burger-menu i {
-    font-size: 2rem; /* Increase the size of the icons */
-    color: #fff; /* Set the color to white */
+    font-size: 1.8rem; /* Taille ajustée pour un meilleur alignement */
+    color: #fff;
     transition: all 0.3s ease;
+    line-height: 40px; /* Alignement vertical */
 }
 
 .burger-menu .fa-bars {

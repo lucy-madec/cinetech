@@ -15,7 +15,7 @@
     </div>
 
     <div class="header-controls">
-        <div class="header-center">
+        <div class="search-burger-container">
             <form action="" class="search-bar" method="get" onsubmit="return false;">
                 <div class="search-wrapper">
                     <i class="fa fa-search search-icon"></i>
@@ -23,13 +23,14 @@
                     <div id="search-results" class="search-results-dropdown"></div>
                 </div>
             </form>
-        </div>
-
-        <div class="header-right">
+            
             <button class="burger-menu" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
                 <i class="fa fa-times" style="display: none;"></i>
             </button>
+        </div>
+
+        <div class="header-right">
 
             <nav class="navbar">
                 <div class="nav-links">
