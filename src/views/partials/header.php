@@ -35,12 +35,12 @@
                     <div id="mobile-search-results" class="search-results-dropdown"></div>
                 </div>
             </form>
-            
-            <button class="burger-menu" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-                <i class="fa fa-times" style="display: none;"></i>
-            </button>
         </div>
+        
+        <button class="burger-menu" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-times" style="display: none;"></i>
+        </button>
 
         <nav class="navbar">
             <div class="nav-links">
