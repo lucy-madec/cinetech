@@ -1,3 +1,16 @@
+// Fonction globale pour basculer le menu (accessible via onclick)
+function toggleMenu() {
+    const navbar = document.querySelector('.navbar');
+    const iconBars = document.querySelector('.burger-menu .fa-bars');
+    const iconTimes = document.querySelector('.burger-menu .fa-times');
+    const body = document.body;
+    
+    navbar.classList.toggle('active');
+    iconBars.style.display = iconBars.style.display === 'none' ? 'block' : 'none';
+    iconTimes.style.display = iconTimes.style.display === 'none' ? 'block' : 'none';
+    body.style.overflow = navbar.classList.contains('active') ? 'hidden' : '';
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const burgerMenu = document.querySelector('.burger-menu');
     const navbar = document.querySelector('.navbar');
@@ -17,10 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     burgerMenu.addEventListener('click', function(e) {
         e.stopPropagation();
         if (window.innerWidth <= 768) {
-            navbar.classList.toggle('active');
-            iconBars.style.display = iconBars.style.display === 'none' ? 'block' : 'none';
-            iconTimes.style.display = iconTimes.style.display === 'none' ? 'block' : 'none';
-            body.style.overflow = navbar.classList.contains('active') ? 'hidden' : '';
+            toggleMenu(); // Utiliser la fonction globale
         }
     });
 
