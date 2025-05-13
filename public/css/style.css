@@ -79,7 +79,7 @@ h1, h2, h3, .navbar a, .footer-nav {
     width: 280px;
 }
 
-/* Desktop search container */
+/* Containers pour les barres de recherche */
 .desktop-search-container {
     display: none; /* Masqué par défaut, affiché en desktop via media query */
     flex: 2;
@@ -92,9 +92,8 @@ h1, h2, h3, .navbar a, .footer-nav {
     max-width: 400px;
 }
 
-/* Mobile search */
 .mobile-search {
-    display: block;
+    display: block; /* Visible par défaut sur mobile */
 }
 
 .search-icon {
@@ -1166,27 +1165,28 @@ form {
 }
 
 @media (min-width: 769px) {
+    /* Navigation en mode desktop */
     .navbar {
-        display: flex; /* Afficher la barre de navigation sur les écrans plus larges */
+        display: flex;
         flex-direction: row;
         gap: 15px;
     }
 
     .burger-menu {
-        display: none; /* Masquer le menu burger sur les écrans plus larges */
+        display: none;
     }
     
-    /* Afficher la barre de recherche desktop */
+    /* Barre de recherche en mode desktop */
     .desktop-search-container {
         display: flex;
+        align-items: center;
     }
     
-    /* Masquer la barre de recherche mobile */
     .mobile-search {
         display: none;
     }
     
-    /* Réorganiser le header en mode desktop */
+    /* Structure du header en mode desktop */
     .site-header {
         flex-wrap: nowrap;
     }
