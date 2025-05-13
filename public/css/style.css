@@ -47,8 +47,9 @@ h1, h2, h3, .navbar a, .footer-nav {
 
 .header-logo-title {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
+    padding-left: 20px;
 }
 
 .header-controls {
@@ -1040,6 +1041,8 @@ form {
 
     .header-logo-title {
         margin-bottom: 1rem;
+        justify-content: center;
+        padding-left: 0;
     }
 
     .site-title {
