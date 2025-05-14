@@ -26,20 +26,25 @@
     </div>
 
     <div class="header-controls">
-        <div class="search-burger-container">
-            <!-- La barre de recherche mobile reste ici pour la version responsive -->
-            <form action="" class="search-bar mobile-search" method="get" onsubmit="return false;">
-                <div class="search-wrapper">
-                    <i class="fa fa-search search-icon"></i>
-                    <input type="text" id="mobile-search-input" autocomplete="off" placeholder="Rechercher un film ou une série...">
-                    <div id="mobile-search-results" class="search-results-dropdown"></div>
-                </div>
-            </form>
+        <div class="mobile-header-controls">
+            <!-- La barre de recherche mobile -->
+            <div class="mobile-search-container">
+                <form action="" class="search-bar mobile-search" method="get" onsubmit="return false;">
+                    <div class="search-wrapper">
+                        <i class="fa fa-search search-icon"></i>
+                        <input type="text" id="mobile-search-input" autocomplete="off" placeholder="Rechercher un film ou une série...">
+                        <div id="mobile-search-results" class="search-results-dropdown"></div>
+                    </div>
+                </form>
+            </div>
             
-            <button class="burger-menu" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-                <i class="fa fa-times" style="display: none;"></i>
-            </button>
+            <!-- Menu burger séparé -->
+            <div class="burger-container">
+                <button class="burger-menu" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-times" style="display: none;"></i>
+                </button>
+            </div>
         </div>
 
         <nav class="navbar">

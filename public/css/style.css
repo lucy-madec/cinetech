@@ -63,12 +63,22 @@ h1, h2, h3, .navbar a, .footer-nav {
     flex: 1;
 }
 
-.search-burger-container {
+/* Structure réorganisée pour éviter le chevauchement */
+.mobile-header-controls {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    gap: 10px;
+    gap: 15px;
+}
+
+.mobile-search-container {
+    flex: 1;
+}
+
+.burger-container {
+    width: 40px;
+    flex-shrink: 0;
 }
 
 .user-badge i {
@@ -79,7 +89,8 @@ h1, h2, h3, .navbar a, .footer-nav {
 /* Search Bar */
 .search-wrapper {
     position: relative;
-    width: 280px;
+    width: 100%;
+    max-width: 280px;
 }
 
 /* Containers pour les barres de recherche */
@@ -97,6 +108,8 @@ h1, h2, h3, .navbar a, .footer-nav {
 
 .mobile-search {
     display: block; /* Visible par défaut sur mobile */
+    flex: 1;
+    max-width: calc(100% - 60px);
 }
 
 .search-icon {
@@ -1188,6 +1201,7 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 40px;
     width: 40px;
     height: 40px;
     background: none;
@@ -1195,6 +1209,7 @@ form {
     cursor: pointer;
     z-index: 1001;
     margin-left: 0;
+    flex-shrink: 0;
 }
 
 .burger-menu div {
