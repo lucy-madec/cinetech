@@ -1342,7 +1342,19 @@ form {
 
 
 
-@media (min-width: 767px) {
+/* Styles for smaller devices - mobile and small tablets */
+@media (max-width: 767.98px) {
+    .navbar {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+}
+
+/* Styles for medium devices and up */
+@media (min-width: 768px) {
     /* Navigation en mode desktop */
     .navbar {
         display: flex;
@@ -1376,16 +1388,6 @@ form {
     
     .header-logo-title {
         flex: 1;
-    }
-}
-
-@media (max-width: 767px) {
-    .navbar {
-        display: none;
-    }
-
-    .burger-menu {
-        display: flex;
     }
 }
 
