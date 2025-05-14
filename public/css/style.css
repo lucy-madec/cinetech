@@ -68,6 +68,7 @@ h1, h2, h3, .navbar a, .footer-nav {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    gap: 10px;
 }
 
 .user-badge i {
@@ -1193,7 +1194,7 @@ form {
     border: none;
     cursor: pointer;
     z-index: 1001;
-    margin-left: 20px;
+    margin-left: 0;
 }
 
 .burger-menu div {
