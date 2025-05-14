@@ -1238,17 +1238,7 @@ form {
     padding: 10px 0;
 }
 
-@media (min-width: 769px) {
-    .navbar {
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
-    }
-
-    .burger-menu {
-        display: none;
-    }
-}
+/* Cette règle a été remplacée par la règle générale @media (min-width: 768px) ci-dessous */
 
 .burger-menu i {
     font-size: 1.8rem; /* Taille ajustée pour un meilleur alignement */

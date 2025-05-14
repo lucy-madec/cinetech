@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Gestionnaire de clic pour le menu burger
     burgerMenu.addEventListener('click', function(e) {
         e.stopPropagation();
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth < 768) {
             toggleMenu(); // Utiliser la fonction globale
         }
     });
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fermer le menu lors du redimensionnement de la fenêtre
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth >= 768) {
             closeMenu();
         }
     });
