@@ -22,5 +22,6 @@
         </div>
     </div>
 </footer>
+<script src="/cinetech/public/js/mobileSearch.js"></script>
 </body>
 </html>

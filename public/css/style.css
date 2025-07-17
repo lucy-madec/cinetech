@@ -145,6 +145,7 @@ h1, h2, h3, .navbar a, .footer-nav {
     top: 100%;
     left: 0;
     width: 100%;
+    min-width: 200px;
     background: #000;
     border: 1px solid #ff0000;
     border-radius: 20px;
@@ -152,6 +153,7 @@ h1, h2, h3, .navbar a, .footer-nav {
     overflow: auto;
     display: none;
     margin-top: 5px;
+    box-sizing: border-box;
 }
 
 .search-results-dropdown:not(:empty) {
