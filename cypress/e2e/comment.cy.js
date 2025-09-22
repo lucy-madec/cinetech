@@ -1,4 +1,4 @@
-describe('Gestion des favoris', () => {
+describe('Ajouter un commentaire', () => {
   beforeEach(() => {
     cy.visit('http://localhost/cinetech/?page=login')
     cy.get('#email').type('lucy.madec@gmail.com')
@@ -28,16 +28,12 @@ describe('Gestion des favoris', () => {
     cy.get('[data-testid="title"]').should('be.visible')
     cy.get('h2.neon-text').should('be.visible')
 
-    // Mettre en favoris
-    cy.get('.favorite-button .fa-star')
-      .should('have.class', 'empty') // étoile blanche (non favori)
-      .click()
-    cy.get('.favorite-button .fa-star')
-      .should('have.class', 'filled') // étoile jaune (favori)
+    // Saisir un commentaire et soumettre le formulaire
+    const commentaire = 'Ceci est un test automatique ';
+    cy.get('.comments-section form.comment-form').first().find('textarea[name="content"]').should('be.visible').type(commentaire);
+    cy.get('.comments-section form.comment-form').first().find('button[type="submit"]').click();
 
-    // Vérifier que "Inception" est dans la liste des favoris
-    cy.visit('http://localhost/cinetech/?page=favoris')
-    cy.url().should('include', '?page=favoris')
-    cy.contains('.favoris-list, .favorites-list, body', 'Inception').should('be.visible')
-  })
-})
+    // Vérifier que le commentaire apparaît dans la liste
+    cy.contains('.comments-list', commentaire).should('be.visible');
+  });
+});
